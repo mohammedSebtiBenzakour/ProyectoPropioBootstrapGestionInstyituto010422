@@ -84,7 +84,7 @@ $array = mysqli_fetch_array($query);
                   <ul class="navbar-nav">
                     <li class="nav-item dropdown disabled" hidden>
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Administraciónes
+                        Administración
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                         <li><a class="dropdown-item" href="login con sesiones/eleccionPorPerfiles.php" target="_blank">Pagina para acceder o crear perfiles</a></li>
