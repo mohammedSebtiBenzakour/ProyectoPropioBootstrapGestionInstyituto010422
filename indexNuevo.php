@@ -6,14 +6,15 @@ $consultar = "select * from insertar_noticias";
 $query = mysqli_query($connection, $consultar);
 $array = mysqli_fetch_array($query);
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gestión de un instituto">
+    <meta name="keywords" content="instituto, profesores, alumnos, notas, materias, matriculas, listados">
+    <meta name="author" content="Mohammed Sebti Benzakour">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gestión de un Instítuto</title>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
