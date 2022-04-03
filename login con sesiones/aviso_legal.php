@@ -97,7 +97,7 @@ if (!isset($usuario) || !isset($perfil)) {
 		<div class="row">
 			<!-- Button trigger modal -->
 			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-				Launch demo modal
+				Ver Avisos Legales
 			</button>
 
 			<!-- Modal -->
