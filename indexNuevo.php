@@ -509,7 +509,7 @@ data-background-color="f5f5f5"
             <span class="footer-title">Información especifica</span>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Aviso legal</a>
+            <a class="nav-link" href="login con sesiones/aviso_legal.php">Aviso legal</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Visitas</a>
