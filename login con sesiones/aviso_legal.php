@@ -1,3 +1,19 @@
+<?php 
+	require_once('conexion.php');
+	session_start();
+	$usuario = $_SESSION['usuario'] ;
+	$perfil = $_SESSION['perfil'] ;
+	if (!isset($usuario) || !isset($perfil)) {
+		header("location: loginProfesores.php");
+	}else{
+
+// 	echo "<h1>Bienvenido : $usuario </h1>";
+
+// echo "<h2></h2>";
+	}
+
+
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,6 +63,15 @@
 								<li class="nav-item">
 									<a class="nav-link" href="calendario.html">Calendario</a>
 								</li>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+										Datos de la persona conectada
+									</a>
+									<ul class="dropdown-menu p-2" aria-labelledby="navbarScrollingDropdown">
+										<li>Bienvenido : <?php echo $usuario; ?> </li>
+										<li>Tu perfil es : <?php echo $perfil; ?></li>
+									</ul>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -64,21 +89,23 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
-					<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login General</a></li>
+					<li class="breadcrumb-item"><a href="aviso_legal.php">Aviso Legal</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Pagina Principal</li>
 				</ol>
 			</nav>
 		</div>
-		<div class="row">
-			<div class="col-2 d-flex justify-content-start ">
-				<img class="shadow p-3 mb-5 bg-body rounded rounded-circle" src="../img/logoInstituto.jpg" alt="Logo del Instituto" width="100px">
+		<div class="row p-4">
+				<div class="col">
+					<a class="btn btn-outline-info" href="aviso_legal.php" role="button">Reiniciar</a>
+				</div>
+				<div class="col">
+					<a class="btn btn-outline-success" href="aviso_legal.pdf" role="button">Ver Avisos Legales</a>
+				</div>
+				<div class="col">
+					<a class="btn btn-outline-warning" href="../indexNuevo.php" role="button">Volver</a>
+				</div>
 			</div>
-			<div class="col-8 ">
-				<h1>Bienvenido : <?php echo $usuario; ?> </h1>
-				<h3>Tu perfil es : <?php echo $perfil; ?></h3>
-				<h3></h3>
-			</div>
-		</div>
+		
 </div>
 
 <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
