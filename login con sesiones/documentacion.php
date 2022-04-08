@@ -120,7 +120,7 @@ $arrayN = mysqli_fetch_array($queryN);
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="paginaMenuAside.php">Administración</a></li>
-					<li class="breadcrumb-item"><a href="documentacion.php">Jefatura</a></li>
+					<li class="breadcrumb-item"><a href="documentacion.php">Ver documentación</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Consultar documentación</li>
 				</ol>
 			</nav>

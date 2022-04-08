@@ -4,11 +4,13 @@
 package entidades;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -28,6 +30,9 @@ public class Departamento_instituto implements Serializable {
 
     @Column(name = "creado_el")
     private String creado_el;
+    
+    @OneToMany
+    private List<Registrar_usuarios> listaProfesores ;
 
     public Departamento_instituto() {
     }
@@ -37,6 +42,14 @@ public class Departamento_instituto implements Serializable {
         this.nombre_departamento = nombre_departamento;
         this.creado_el = creado_el;
     }
+    public List<Registrar_usuarios> getlistaProfesores() {
+        return listaProfesores;
+    }
+
+    public void setlistaProfesores(List<Registrar_usuarios> listaProfesores) {
+        this.listaProfesores = listaProfesores;
+    }
+    
 
     public String getNombre_departamento() {
         return nombre_departamento;
