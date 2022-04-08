@@ -89,40 +89,40 @@
 				<h2 >
 					
 					<?php 
-						if (!empty($error)) {
-							echo $error;
-							unset($_SESSION['error']);
-						} else {
-							unset($_SESSION['error']);
-							echo isset($_SESSION['error']);
-						}
-						
-					 ?>
+					if (!empty($error)) {
+						echo $error;
+						unset($_SESSION['error']);
+					} else {
+						unset($_SESSION['error']);
+						echo isset($_SESSION['error']);
+					}
+
+					?>
 
 				</h2>
 				<form action="logear.php" method="POST" class="row g-3 needs-validation" novalidate>
 					<div class="col-md-12">
 						<label for="validationServer04" class="form-label">Perfil</label>
 						<select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required name="perfil">
-								<option selected disabled value="">Eligir vuestro perfil...</option>
-								<?php foreach ($query as $row) { ?>
+							<option selected disabled value="">Eligir vuestro perfil...</option>
+							<?php foreach ($query as $row) { ?>
 								<option value="<?php echo $row['perfil']; ?>"><?php echo $row['perfil']; ?></option>
-								<?php } ?>
-							</select>
-							<div id="validationServer04Feedback" class="invalid-feedback">
-								Please select a valid perfil.
-							</div>
+							<?php } ?>
+						</select>
+						<div id="validationServer04Feedback" class="invalid-feedback">
+							Please select a valid perfil.
+						</div>
 					</div>
 					<div class="col-md-12">
 						<label for="validationCustom01" class="form-label">Nombre de usuario</label>
-						<input type="text" class="form-control" id="validationCustom01"  name="usuario" required value="a">
+						<input type="text" class="form-control estudiantes" id="validationCustom01"  name="usuario" required value="a">
 						<div class="valid-feedback">
 							Looks good!
 						</div>
 					</div>
 					<div class="col-md-12">
 						<label for="validationCustom02" class="form-label">Contraseña</label>
-						<input type="password" name="clave" value="a" class="form-control" id="validationCustom02" value="" required>
+						<input type="password" name="clave" value="a" class="form-control estudiantes" id="validationCustom02" value="" required>
 						<div class="valid-feedback">
 							Looks good!
 						</div>
@@ -158,8 +158,11 @@
 			</div>
 		</div>
 		
-		<script type="text/javascript" src="bootstrap.min.js"></script>
-		<script type="text/javascript" src="validarLoginProfesores.js"></script>
+		<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+		<script type="text/javascript" src="../js/validarLoginProfesores.js"></script>
+		<script type="text/javascript" src="../js/seleccionarEstudiante.js"></script>
 	</center>
 
 </body>

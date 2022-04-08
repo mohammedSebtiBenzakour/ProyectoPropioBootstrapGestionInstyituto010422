@@ -18,6 +18,14 @@ $query = mysqli_query($connection , $consulta);
 
 $array = mysqli_fetch_array($query);
 
+
+$consultaP= "select u.usuario , u.clave, u.perfil, count(*) as contar from personal_no_docente u INNER join perfiles p on u.perfil = '$perfil' where u.usuario = '$usuario' and u.clave='$clave'";
+
+$queryP = mysqli_query($connection , $consultaP);
+
+$arrayP = mysqli_fetch_array($queryP);
+
+
 echo $array['contar'] . " - " . $array['usuario'] . " - " . $array["perfil"];
 
 if ($array['contar'] > 0) {
@@ -31,7 +39,8 @@ if ($array['contar'] > 0) {
 		$_SESSION['perfil'] = $perfil;
 		// header("location: paginaPrincipal.php");
 		header("location: paginaMenuAside.php");
-	}else{
+	}	else{
+
 		$error = "No eres administrador";
 		echo "No eres administrador";
 		$_SESSION['usuario'] = $usuario;
@@ -41,13 +50,26 @@ if ($array['contar'] > 0) {
 	}
 		//header("location: paginaPrincipal.php");
 }else{
-		//header("location: PanelDeControl.php");
-	$error = "datos incorrectos";
-		//echo "usuario : " . $usuario .  "  and contraseña " . $clave ;
 
-	$_SESSION['error'] = $error;
+	if ( $perfil == 'estudiante' ) {
+		
+		header("location: vistaEstudiantes.php");
+	} else {
+		if($perfil == $arrayP['perfil'] && $usuario == $arrayP['usuario'] && $clave = $arrayP['clave'] && $perfil == 'personal_no_docente'){
 
-		header("location: loginPorPerfiles.php");
+			$_SESSION['usuario'] = $usuario;
+			$_SESSION['perfil'] = $perfil;
+			
+			header("location: vistaPersonalNoDocente.php");
+		}else{
+			
+			$error = "datos incorrectos";
+
+			$_SESSION['error'] = $error;
+
+			header("location: loginPorPerfiles.php");
+		}
+	}
 }
 
 
