@@ -18,11 +18,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
          <link href="../css/estilosNotas.css" rel="stylesheet" type="text/css"/>
+         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+             //  alert("${param.mensaje}");
+              Swal.fire({
+                title: '${param.mensaje}',
+                type: 'success'
+            })
             }
 
         </script>

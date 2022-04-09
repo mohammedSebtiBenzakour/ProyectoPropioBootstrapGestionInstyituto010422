@@ -16,11 +16,16 @@
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
         <link href="../css/otrosEstilosGenerales.css" rel="stylesheet" type="text/css"/>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                //   alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>

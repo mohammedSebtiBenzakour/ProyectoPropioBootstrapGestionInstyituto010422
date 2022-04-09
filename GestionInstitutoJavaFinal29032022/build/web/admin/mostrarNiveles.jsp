@@ -9,18 +9,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-           <meta http-equiv="Content-Type" content="text/html; charset=latin1">
+        <meta http-equiv="Content-Type" content="text/html; charset=latin1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                //  alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>
@@ -46,13 +51,13 @@
             </div>
         </nav>
         <h1 class="d-flex justify-content-center">Mostrar Niveles</h1>
-          <section class="container ">
+        <section class="container ">
             <table class="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Nombre Nivel</th>
                         <th scope="col">Fecha creación del nivel</th>
-                       
+
                         <th scope="col">Eliminar</th>
                         <th scope="col">Modificar</th>
                     </tr>
@@ -62,7 +67,7 @@
                         <tr>
                             <td><c:out value="${nivel.nombre_nivel}"/></td>
                             <td><c:out value="${nivel.creado_el}"/></td>
-                            
+
                             <td>
                                 <a class="btn btn-danger" href="EliminarNivel?nivel=${nivel.nombre_nivel}">Eliminar</a>
                             </td>
@@ -74,7 +79,7 @@
                 </tbody>
             </table>
         </section>  
-        
+
         <footer class="container mb-3">
             <a class="w-100 btn btn-warning btn-lg mt-2" href="gestionNiveles.jsp">Volver</a>
         </footer>

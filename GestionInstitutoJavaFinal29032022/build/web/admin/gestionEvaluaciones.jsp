@@ -21,12 +21,16 @@
         <link href="../css/estilosEvaluaciones.css" rel="stylesheet" type="text/css"/>
         <link href="" rel="stylesheet" type="text/css"/>
         <link href="" rel="stylesheet" type="text/css"/>
-
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                //  alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>
@@ -51,12 +55,12 @@
                 </div>
             </div>
         </nav>
-       
 
-          <section class="portafolio">
+
+        <section class="portafolio">
             <div class="contenedor">
                 <div class="portafolio-textos">
-                     <h1 class="d-flex justify-content-center  ">Gestion de las evaluaciones</h1>
+                    <h1 class="d-flex justify-content-center  ">Gestion de las evaluaciones</h1>
                 </div>
                 <section class="galeria">
                     <div class="fotos">

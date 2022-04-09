@@ -17,12 +17,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
         <link href="../css/login.css" rel="stylesheet" type="text/css"/>
-
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                // alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>
@@ -57,8 +61,8 @@
                                 <h3>Modificar una Evaluacion</h3>
 
                                 <form class="requires-validation" novalidate action="ModificarEvaluacion" method="post">
-                                    
-                                     <div class="col-md-12">
+
+                                    <div class="col-md-12">
                                         <input class="form-control" type="number" name="id" placeholder="Id Evaluacion" value="${id}" required>
                                         <div class="valid-feedback">Id Evaluacion field is valid!</div>
                                         <div class="invalid-feedback">Id Evaluacion field cannot be blank!</div>

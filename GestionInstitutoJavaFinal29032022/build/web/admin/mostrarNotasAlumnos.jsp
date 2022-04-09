@@ -16,12 +16,17 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                //  alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>

@@ -16,11 +16,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+                //  alert("${param.mensaje}");
+                Swal.fire({
+                    title: '${param.mensaje}',
+                    type: 'success'
+                })
             }
 
         </script>
@@ -47,36 +52,36 @@
         </nav>
         <h1 class="d-flex justify-content-center">Modificar Nota Alumno</h1>
         <section class="container ">
-        <form action="ModificarNotaAlumno" method="post">
-            <div class="mb-3 row">
-                <label for="inputId" class="col-sm-2 col-form-label">ID</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" id="inputId" name="id" readonly="" value="${id}">
+            <form action="ModificarNotaAlumno" method="post">
+                <div class="mb-3 row">
+                    <label for="inputId" class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="inputId" name="id" readonly="" value="${id}">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="input_dni_alumno" class="col-sm-2 col-form-label">Dni Alumno</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="input_dni_alumno" name="dni_alumno" readonly="" value="${dni_alumno}">
+                <div class="mb-3 row">
+                    <label for="input_dni_alumno" class="col-sm-2 col-form-label">Dni Alumno</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input_dni_alumno" name="dni_alumno" readonly="" value="${dni_alumno}">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="input_nota" class="col-sm-2 col-form-label">Nota Alumno</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="input_nota" name="nota" value="${nota}">
+                <div class="mb-3 row">
+                    <label for="input_nota" class="col-sm-2 col-form-label">Nota Alumno</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input_nota" name="nota" value="${nota}">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="input_observacion" class="col-sm-2 col-form-label">Observación</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="input_observacion" name="observacion" value="${observacion}">
+                <div class="mb-3 row">
+                    <label for="input_observacion" class="col-sm-2 col-form-label">Observación</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="input_observacion" name="observacion" value="${observacion}">
+                    </div>
                 </div>
-            </div>
-            <button class="w-100 btn btn-success btn-lg" type="submit" name="modificar_nota" >Modificar Nota</button>
-            <a class="w-100 btn btn-warning btn-lg mt-2" href="../inicio.jsp">Volver a Inicio</a>
-        </form>
-            </section>
-        
+                <button class="w-100 btn btn-success btn-lg" type="submit" name="modificar_nota" >Modificar Nota</button>
+                <a class="w-100 btn btn-warning btn-lg mt-2" href="../inicio.jsp">Volver a Inicio</a>
+            </form>
+        </section>
+
 
 
 

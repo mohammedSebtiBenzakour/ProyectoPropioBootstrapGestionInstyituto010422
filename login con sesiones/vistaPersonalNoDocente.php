@@ -84,41 +84,41 @@ $array = mysqli_fetch_array($query);
               <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                   <ul class="navbar-nav">
                     
-               
-            <li class="nav-item dropdown ">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Juegos Educativos
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
-                <li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
-                <li><a class="dropdown-item" href="../ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown disabled" hidden>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Varios
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
-            <li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
-            <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
-            <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
-            <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
-            <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
-            <li><a class="dropdown-item" href="#">Calculadora</a></li>
-        </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="calendario.html">Calendario</a>
-  </li>
-</ul>
-</div>
+                   
+                    <li class="nav-item dropdown ">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Juegos Educativos
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
+                        <li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
+                        <li><a class="dropdown-item" href="../ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown disabled" hidden>
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Varios
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+                    <li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
+                    <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
+                    <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
+                    <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
+                    <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
+                    <li><a class="dropdown-item" href="#">Calculadora</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calendario.html">Calendario</a>
+          </li>
+      </ul>
+  </div>
 </div>
 </nav>
 </div>
@@ -361,121 +361,45 @@ data-background-color="f5f5f5"
     <div class="row">
         <div class="col">
             <section id="portfolio" class="portfolio">
-              <div class="container">
-                <div class="row text-center mt-5">
-                  <h1 class="display-3 fw-bold text-capitalize">Curiosidades en la vida para aprender de ellas</h1>
-                  <div class="heading-line"></div>
-                  <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint porro temporibus distinctio.
-                </p>
-            </div>
-            <!-- FILTER BUTTONS  -->
-            <div class="row mt-5 mb-4 g-3 text-center">
-              <div class="col-md-12">
-                <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-html5">Cursos de Lenguaje HTML5</a></button>
-                <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-javascript">Cursos sobre Lenguaje JavaScript</a></button>
-                <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-css">Cursos sobre lenguaje CSS</a></button>
-                 <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/programacion-en-java">Cursos de programación en Java</a></button>
-                  <button class="btn btn-outline-primary" type="button"><a href="https://www.classcentral.com/subject/php">Free OnlinePHP Courses</a></button>
-                   <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/desarrollo-de-aplicaciones">Cursos de Desarrollo de Aplicaciones</a></button>
-
-                <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/sql">Cursos sobre SQL</a></button>
-                <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/my-sql">Cursos de MySQL</a></button>
-                <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/docker">Cursos de docker</a></button>
-            </div>
-            <div class="row pt-2">
-                <ul class="modales">
-                    <li><a href="#modal1">DESLIZAR</a></li>
-                    <li><a href="#modal2">ROTAR</a></li>
-                    <li><a href="#modal3">REDIMENSIONAR</a></li>
-                </ul>
-                <div id="modal1" class="modalmask">
-                    <div class="modalbox movedown">
-                        <a href="#close" title="Close" class="close">X</a>
-                        <h2>DESLIZAR</h2>
-                        <p>La ventana modal aparece por arriba y se desliza hasta su posición. Un efecto simple pero elegante.</p>
-                        <p>Aquí puedes incluir cualquier cosa como vídeos, mapas, formularios...</p>
+               
+                <!-- FILTER BUTTONS  -->
+                <div class="row mt-5 mb-4 g-3 text-center">
+                   
+                    <div class="row pt-2">
+                        <ul class="modales">
+                            <li><a href="#modal1">DESLIZAR</a></li>
+                            <li><a href="#modal2">ROTAR</a></li>
+                            <li><a href="#modal3">REDIMENSIONAR</a></li>
+                        </ul>
+                        <div id="modal1" class="modalmask">
+                            <div class="modalbox movedown">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <h2>DESLIZAR</h2>
+                                <p>La ventana modal aparece por arriba y se desliza hasta su posición. Un efecto simple pero elegante.</p>
+                                <p>Aquí puedes incluir cualquier cosa como vídeos, mapas, formularios...</p>
+                            </div>
+                        </div>
+                        <div id="modal2" class="modalmask">
+                            <div class="modalbox rotate">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <h2>ROTAR</h2>
+                                <p>Usando la propiedad transform de CSS3, podemos hacer que las ventanas aparezcan rotando.</p>
+                                <p>No hay nada de Javascript, solo unas pocas lineas de CSS.</p>
+                            </div>
+                        </div>
+                        <div id="modal3" class="modalmask">
+                            <div class="modalbox resize">
+                                <a href="#close" title="Close" class="close">X</a>
+                                <h2>REDIMENSIONAR</h2>
+                                <p>También puedes redimensionar la ventana hasta hacerla desaparecer.</p>
+                                <p>Las posibilidades que ofrece CSS3 son múltiples, tan solo hace falta un poco de imaginación para crear efectos realmente llamativos.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="modal2" class="modalmask">
-                    <div class="modalbox rotate">
-                        <a href="#close" title="Close" class="close">X</a>
-                        <h2>ROTAR</h2>
-                        <p>Usando la propiedad transform de CSS3, podemos hacer que las ventanas aparezcan rotando.</p>
-                        <p>No hay nada de Javascript, solo unas pocas lineas de CSS.</p>
-                    </div>
-                </div>
-                <div id="modal3" class="modalmask">
-                    <div class="modalbox resize">
-                        <a href="#close" title="Close" class="close">X</a>
-                        <h2>REDIMENSIONAR</h2>
-                        <p>También puedes redimensionar la ventana hasta hacerla desaparecer.</p>
-                        <p>Las posibilidades que ofrece CSS3 son múltiples, tan solo hace falta un poco de imaginación para crear efectos realmente llamativos.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- START THE PORTFOLIO ITEMS  -->
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="portfolio-box shadow">
-              <img src="../img/html.jpg" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
-              <div class="portfolio-info">
-                  <h4><a href="https://www.edx.org/es/aprende/lenguaje-html5">Cursos de Lenguaje HTML5</a></h4>
-                  <p>Sus curiosidades</p>
-              </div>
-          </div>
-      </div>
-      <div class="col-lg-4 col-md-6">
-        <div class="portfolio-box shadow">
-          <img src="../img/javascript.jpg" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
-          <div class="portfolio-info">
-            <h4><a href="https://www.edx.org/es/aprende/lenguaje-javascript">Cursos sobre Lenguaje JavaScript</a></h4>
-            <p>Su alrededor</p>
+            </section>
         </div>
     </div>
-</div>
-<div class="col-lg-4 col-md-6">
-    <div class="portfolio-box shadow">
-      <img src="../img/css.jpg" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
-      <div class="portfolio-info">
-        <h4><a href="https://www.edx.org/es/aprende/lenguaje-css">Cursos sobre lenguaje CSS</a></h4>
-        <p>Realmente, sorprendente</p>
-    </div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-    <div class="portfolio-box shadow">
-      <img src="../img/java.jpg" alt="portfolio 4 image" title="portfolio 4 picture" class="img-fluid">
-      <div class="portfolio-info">
-        <h4><a href="https://www.edx.org/es/aprende/programacion-en-java">Cursos de programación en Java</a></h4>
-        <p>Este es tu lugar</p>
-    </div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6">
-    <div class="portfolio-box shadow">
-      <img src="../img/mysql.png" alt="portfolio 5 image" title="portfolio 5 picture" class="img-fluid">
-      <div class="portfolio-info">
-          <h4><a href="https://www.edx.org/es/aprende/my-sql">Cursos de MySQL</a></h4>
-          <p>Nunca lo adivinarias</p>
-      </div>
-  </div>
-</div>
-<div class="col-lg-4 col-md-6">
-    <div class="portfolio-box shadow">
-      <img src="../img/docker.jpg" alt="portfolio 6 image" title="portfolio 6 picture" class="img-fluid">
-      <div class="portfolio-info">
-        <h4><a href="https://www.edx.org/es/aprende/docker">Cursos de docker</a></h4>
-        <p>Sus secretos</p>
-    </div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</div>
 </section>
 <footer>
   <div class="container">

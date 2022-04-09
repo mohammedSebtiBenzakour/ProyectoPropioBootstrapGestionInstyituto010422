@@ -26,12 +26,16 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
         <link href="../css/login.css" rel="stylesheet" type="text/css"/>
-
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Gestion Instituto</title>
         <script>
 
             function mostrarMensaje() {
-                alert("${param.mensaje}");
+               // alert("${param.mensaje}");
+                Swal.fire({
+                title: '${param.mensaje}',
+                type: 'success'
+            })
             }
 
         </script>
@@ -67,7 +71,7 @@
                                 <p>Completar todos los campos.</p>
                                 <form class="requires-validation" novalidate action="InsertarMatricula" method="post">
 
-                                     <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <input class="form-control" type="text" name="nombre_matricula" placeholder="Nombre Matricula" value="${nombre_matricula}" required>
                                         <div class="valid-feedback">Nombre Matricula field is valid!</div>
                                         <div class="invalid-feedback">Nombre Matricula field cannot be blank!</div>
@@ -95,7 +99,7 @@
 
                                                 for (Registrar_alumnos al : listaAlumnos) {
                                             %>
-                                            <option value="<%=al.getDni_alumno()%>"><%=al.getNombre_alumno()%> <%=al.getPrimer_apellido_alumno() %> <%=al.getSegundo_apellido_alumno() %></option>
+                                            <option value="<%=al.getDni_alumno()%>"><%=al.getNombre_alumno()%> <%=al.getPrimer_apellido_alumno()%> <%=al.getSegundo_apellido_alumno()%></option>
                                             <%
                                                 }
                                             %>
@@ -107,9 +111,8 @@
                                     <div class="col-md-12">
                                         <select class="form-select mt-3" required name="materia">
                                             <option   value="">Seleccionar Materia</option>
-                                             <%
-                                              
-                                               List<Materia> listaMaterias = null;
+                                            <%
+                                                List<Materia> listaMaterias = null;
 
                                                 Query consultaM = em.createQuery("Select m From Materia m");
 
@@ -117,7 +120,7 @@
 
                                                 for (Materia ma : listaMaterias) {
                                             %>
-                                            <option value="<%=ma.getMateria() %>"><%=ma.getMateria() %></option>
+                                            <option value="<%=ma.getMateria()%>"><%=ma.getMateria()%></option>
                                             <%
                                                 }
                                             %>

@@ -192,6 +192,10 @@
         <servlet-name>PdfMatriculas</servlet-name>
         <servlet-class>controlador.PdfMatriculas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SubirImagen</servlet-name>
+        <servlet-class>controlador.SubirImagen</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearNivel</servlet-name>
         <url-pattern>/CrearNivel</url-pattern>
@@ -383,6 +387,10 @@
     <servlet-mapping>
         <servlet-name>PdfMatriculas</servlet-name>
         <url-pattern>/admin/PdfMatriculas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubirImagen</servlet-name>
+        <url-pattern>/admin/SubirImagen</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

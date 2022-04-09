@@ -323,40 +323,7 @@ data-background-color="f5f5f5"
 </div>
 </div>
 </section>
-<section class="container pt-3">
-    <div class="row">
-        <div class="col">
-            <h2 class="noticias pb-3">Ultimas Noticias</h2>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col">
-          <div class="accordion" id="accordionPanelsStayOpenExample">
-            <?php 
-            foreach ($query as $row) {
-                ?>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse<?php echo  $row['id']; ?>" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        <?php echo  $row['nombre_noticia']; ?>
-                    </button>
-                </h2>
-                <div id="panelsStayOpen-collapse<?php echo  $row['id']; ?>" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                  <div class="accordion-body">
-                    <?php echo  $row['texto_noticia']; ?>
-                </div>
-                <div class="accordion-body">
-                    Fecha de la noticia: <?php echo  $row['creado_el']; ?>
-                </div>
-            </div>
-        </div>
-    <?php }
-    ?>
 
-</div>
-</div>
-</div>
-</section>
 <section class="container">
     <div class="row">
         <div class="col">
