@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-04-2022 a las 16:31:56
+-- Tiempo de generación: 01-04-2022 a las 06:17:57
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -46,9 +46,9 @@ INSERT INTO `curso` (`curso`, `descripcion_curso`, `fecha_creacion`, `ID`) VALUE
 ('2023-2024', 'Curso detallado - 3', '2022-03-20 15:46:37', 3),
 ('2024-2025', 'Curso detallado - 4', '2022-03-20 15:46:37', 4),
 ('2025-2026', 'Curso detallado - 5', '2022-03-20 15:46:37', 5),
-('2026-2027', 'Curso detallado - 6', '2022-04-02 14:00:32', NULL),
-('2027-2028', 'Curso detallado - 7wwww', '2022-04-02 13:54:26', NULL),
-('2030-2031', 'ddddddddddddd', '2022-04-02 14:09:06', 1952);
+('2026-2027', 'Curso detallado - 6', '2022-03-20 15:46:37', 6),
+('2027-2028', 'Curso detallado - 7', '2022-03-20 15:46:37', 7),
+('2028-2029', 'Curso detallado - 8', '2022-03-20 15:46:37', 8);
 
 -- --------------------------------------------------------
 
@@ -101,23 +101,7 @@ INSERT INTO `departamento_instituto` (`nombre_departamento`, `creado_el`, `ID`) 
 ('Eletricidad', '2022-03-19 14:27:02', 902),
 ('Informatica', '2022-03-19 14:27:02', 903),
 ('Quimica', '2022-03-19 14:27:02', 904),
-('Fisica', '2022-03-19 16:48:14', NULL),
-('Q inorganica', '2022-04-03 14:27:59', NULL),
-('Nuevo', '2022-04-08 10:42:58', NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `departamento_instituto_registrar_usuarios`
---
-
-DROP TABLE IF EXISTS `departamento_instituto_registrar_usuarios`;
-CREATE TABLE IF NOT EXISTS `departamento_instituto_registrar_usuarios` (
-  `Departamento_instituto_nombre_departamento` varchar(255) NOT NULL,
-  `listaProfesores_dni` varchar(255) NOT NULL,
-  PRIMARY KEY (`Departamento_instituto_nombre_departamento`,`listaProfesores_dni`),
-  KEY `DPRTMENTOINSTITUTOREGISTRARUSUARIOSlstPrfesoresdni` (`listaProfesores_dni`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+('Fisica', '2022-03-19 16:48:14', NULL);
 
 -- --------------------------------------------------------
 
@@ -134,23 +118,24 @@ CREATE TABLE IF NOT EXISTS `evaluacion` (
   `dni_alumno` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_EVALUACION_dni_alumno` (`dni_alumno`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `evaluacion`
 --
 
 INSERT INTO `evaluacion` (`ID`, `fecha_registro`, `nota`, `observacion`, `dni_alumno`) VALUES
+(1, NULL, '1', 'Observacion-045', 'a9'),
 (2, '2022-03-20 15:39:52', '2', 'Observacion-1', 'a9'),
 (3, '2022-03-20 15:39:52', '3', 'Observacion-2', 'a9'),
 (6, '2022-03-20 15:39:52', '6', 'Observacion-5', 'a5'),
 (8, '2022-03-20 15:39:52', '8', 'Observacion-7', 'a7'),
-(9, '2022-04-02 17:12:25', '9', 'Observacion-8', 'a7'),
+(9, '2022-03-20 15:39:52', '9', 'Observacion-8', 'a9'),
 (11, '2022-03-20 15:53:09', '1', 'Observacion-0', 'a5'),
 (12, '2022-03-20 15:53:09', '2', 'Observacion-1', 'a6'),
-(21, '2022-04-02 17:33:46', '234', 'fffffffffffffffffffffffffffff', 'a3'),
-(17, '2022-04-02 17:11:37', '7', 'Observacion-64dd', 'a7'),
-(19, '2022-04-02 17:12:36', '9', 'Observacion-8', 'a3'),
+(15, NULL, '15', 'Observacion-4', 'a5'),
+(17, NULL, '7', 'Observacion-64', 'a7'),
+(19, '2022-03-20 15:53:09', '9', 'Observacion-8', 'a9'),
 (20, '2022-03-20 15:53:09', '10', 'Observacion-9', 'a7');
 
 -- --------------------------------------------------------
@@ -235,39 +220,6 @@ INSERT INTO `insertar_oferta` (`id`, `ciudad_oferta`, `descripcion_oferta`, `emp
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `libros`
---
-
-DROP TABLE IF EXISTS `libros`;
-CREATE TABLE IF NOT EXISTS `libros` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombreLibro` varchar(50) DEFAULT NULL,
-  `descripcionLibro` varchar(50) DEFAULT NULL,
-  `autorLibro` varchar(50) DEFAULT NULL,
-  `categoriaLibro` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `libros`
---
-
-INSERT INTO `libros` (`id`, `nombreLibro`, `descripcionLibro`, `autorLibro`, `categoriaLibro`) VALUES
-(1, 'sebti', 'Action|Adventure|Crime|Thriller', 'Spirit', NULL),
-(2, 'Savages, The', 'Comedy|Drama', 'V8 Vantage', 'Aston Martin'),
-(3, 'Almost You', 'Comedy|Drama', 'Tacoma', 'Toyota'),
-(4, 'Charm School (Niñas mal)', 'Comedy', 'Tucson', 'Hyundai'),
-(5, 'Madonna of the Seven Moons', 'Drama|Mystery', 'Tracer', 'Mercury'),
-(6, 'Three (a.k.a. 3 Extremes II) (Saam gaang)', 'Horror|Mystery', 'V40', 'Volvo'),
-(7, 'Hangover Square', 'Crime|Drama|Horror|Thriller', 'LX', 'Lexus'),
-(8, 'Mutiny on the Bounty', 'Adventure|Drama', 'S-Class', 'Mercedes-Benz'),
-(9, 'Soulless', 'Comedy|Drama', 'iQ', 'Scion'),
-(10, 'Cosmic Psychos: Blokes You Can Trust', 'Documentary|Musical', '3500', 'GMC'),
-(32, 'mohammed', 'mohammed', 'mohammed', 'Coches');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `materia`
 --
 
@@ -292,11 +244,10 @@ INSERT INTO `materia` (`materia`, `descripcion_materia`, `fecha_creacion`, `ID`,
 ('Despliegue', 'Mejor materia del mundo3', '2022-03-20 15:02:45', 1401, 'b'),
 ('Empresa', 'Mejor materia del mundo0', NULL, NULL, '11'),
 ('Programacion', 'ssaSDSSAMejor materia del mundo0', NULL, NULL, '111'),
-('java2', 'Mejor materia del mundo0', '2022-04-02 12:25:51', NULL, '1'),
+('java2', 'Mejor materia del mundo032334', NULL, NULL, '1'),
 ('Entorno cliente', 'Mejor materia del mundo055555', NULL, NULL, 'b'),
 ('Quimica', 'Quimica Organica', '2022-03-27 21:18:32', 1601, '111'),
-('Fisica', 'Mejor materia del mundo0444444', NULL, NULL, 'b'),
-('Electronica', 'Electronica detallada 234', NULL, NULL, '11');
+('Fisica', 'Mejor materia del mundo0444444', NULL, NULL, 'b');
 
 -- --------------------------------------------------------
 
@@ -334,8 +285,7 @@ INSERT INTO `materia_matricula` (`Materia_materia`, `listaMatriculaciones_ID`) V
 ('HLC', 14),
 ('HLC', 16),
 ('Programacion', 17),
-('Programacion', 1451),
-('Quimica', 10);
+('Programacion', 1451);
 
 -- --------------------------------------------------------
 
@@ -354,7 +304,7 @@ CREATE TABLE IF NOT EXISTS `matricula` (
   PRIMARY KEY (`ID`),
   KEY `FK_MATRICULA_nombre_materia` (`nombre_materia`),
   KEY `FK_MATRICULA_dni_alumno` (`dni_alumno`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `matricula`
@@ -363,13 +313,13 @@ CREATE TABLE IF NOT EXISTS `matricula` (
 INSERT INTO `matricula` (`ID`, `creado_el`, `descripcion`, `nombre_matricula`, `dni_alumno`, `nombre_materia`) VALUES
 (1, '2022-03-20 15:56:13', 'Descripcion matricula-1', 'Matricula-1', 'a4', 'Diseño'),
 (2, '2022-03-20 15:56:13', 'Descripcion matricula-2', 'Matricula-2', 'a9', 'Despliegue'),
-(3, '2022-04-02 21:07:05', 'Descripcion matricula-3', 'Matricula-3', 'a3', 'Fisica'),
+(3, '2022-03-20 15:56:13', 'Descripcion matricula-3', 'Matricula-3', 'a3', 'Empresa'),
 (4, '2022-03-20 15:56:13', 'Descripcion matricula-4', 'Matricula-4', 'a1', 'Despliegue'),
 (5, '2022-03-20 15:56:13', 'Descripcion matricula-5', 'Matricula-5', 'a7', 'Empresa'),
 (6, '2022-03-20 15:56:13', 'Descripcion matricula-6', 'Matricula-6', 'a8', 'HLC'),
-(10, '2022-04-02 21:23:41', 'matricula 19 matricula 19 matricula 19', 'matricula 19', 'a8', 'Quimica'),
+(7, '2022-03-20 15:56:13', 'Descripcion matricula-7', 'Matricula-7', 'a1', 'Empresa'),
 (8, '2022-03-20 15:56:36', 'Descripcion matricula-1', 'Matricula-1', 'a1', 'Programacion'),
-(9, '2022-04-02 21:07:25', 'Descripcion matricula-2', 'Matricula-2', 'a7', 'Programacion');
+(9, '2022-03-20 15:56:36', 'Descripcion matricula-2', 'Matricula-2', 'a2', 'Programacion');
 
 -- --------------------------------------------------------
 
@@ -407,8 +357,7 @@ INSERT INTO `nivel_instituto` (`nombre_nivel`, `creado_el`, `ID`) VALUES
 ('Bachillerato', '2022-03-19 16:42:09', 1251),
 ('ESO', '2022-03-19 16:42:09', 1252),
 ('FPGS', '2022-03-19 16:42:09', 1253),
-('Otros', '2022-04-02 12:24:21', 34588),
-('Eso 2', '2022-04-02 12:19:42', 123);
+('Otros', '2022-03-19 16:42:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -433,9 +382,7 @@ INSERT INTO `perfiles` (`perfil`, `creado_el`, `ID`) VALUES
 ('estudiante', '2022-03-19 12:27:49', 52),
 ('jefatura', '2022-03-19 12:27:49', 53),
 ('profesor', '2022-03-19 12:27:49', 54),
-('personal_no_docente', '2022-03-19 14:43:20', 1005),
-('otro', '2022-04-03 12:22:29', NULL),
-('otro2', '2022-04-03 12:23:57', NULL);
+('personal_no_docente', '2022-03-19 14:43:20', 1005);
 
 -- --------------------------------------------------------
 
@@ -545,6 +492,7 @@ CREATE TABLE IF NOT EXISTS `registrar_alumnos_matricula` (
 INSERT INTO `registrar_alumnos_matricula` (`Registrar_alumnos_dni_alumno`, `listaMatriculaciones_ID`) VALUES
 ('a1', 4),
 ('a1', 6),
+('a1', 7),
 ('a1', 8),
 ('a1', 1451),
 ('a2', 3),
@@ -565,7 +513,6 @@ INSERT INTO `registrar_alumnos_matricula` (`Registrar_alumnos_dni_alumno`, `list
 ('a7', 16),
 ('a8', 4),
 ('a8', 6),
-('a8', 10),
 ('a8', 17),
 ('a9', 2),
 ('a9', 8),
@@ -605,7 +552,7 @@ CREATE TABLE IF NOT EXISTS `registrar_usuarios` (
 
 INSERT INTO `registrar_usuarios` (`dni`, `apellidos`, `ciudad`, `clave`, `direccion`, `email`, `fecha`, `fecha_registro`, `ID`, `nombre`, `pais`, `telefono`, `usuario`, `departamento`, `perfil`) VALUES
 ('1', 'a', 'Sevilla', 'a', 'Camas', 'msb.caixa@gmail.com', '2022-01-22', '2022-03-19 13:10:12', 251, 'a', 'España', '123123123', 'a', 'Comercio', 'administrador'),
-('11', 'aa', 'Sevilla', 'aa', 'Camas', 'a@a.com', '2022-02-22', '2022-03-19 13:14:04', 351, 'aa', 'Espaï¿½a', '123123123', 'aa', 'Nuevo', 'jefatura'),
+('11', 'aa', 'Sevilla', 'aa', 'Camas', 'a@a.com', '2022-02-22', '2022-03-19 13:14:04', 351, 'aa', 'España', '123123123', 'aa', 'Comercio', 'jefatura'),
 ('111', 'aaa', 'Sevilla', 'aaa', 'Camas', 'a@a.com', '2022-02-22', '2022-03-19 13:16:39', 452, 'aaabbb', 'Espaï¿½a', '123123123', 'aaa', 'Informatica', 'profesor'),
 ('b', 'b', 'b', 'b', 'bbbbb', 'msb.duck@gmail.com', '2022-03-16', '2022-03-19 16:09:52', NULL, 'b', 'b', '456789432', 'b', 'Quimica', NULL);
 
@@ -630,7 +577,6 @@ CREATE TABLE IF NOT EXISTS `registrar_usuarios_materia` (
 INSERT INTO `registrar_usuarios_materia` (`Registrar_usuarios_dni`, `listaMaterias_materia`) VALUES
 ('1', 'Diseño'),
 ('1', 'java2'),
-('11', 'Electronica'),
 ('11', 'Empresa'),
 ('11', 'Programacion'),
 ('111', 'Fisica'),
@@ -660,63 +606,7 @@ CREATE TABLE IF NOT EXISTS `sequence` (
 --
 
 INSERT INTO `sequence` (`SEQ_NAME`, `SEQ_COUNT`) VALUES
-('SEQ_GEN', '2600');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `subidadocumento`
---
-
-DROP TABLE IF EXISTS `subidadocumento`;
-CREATE TABLE IF NOT EXISTS `subidadocumento` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-  `creado_el` varchar(255) DEFAULT NULL,
-  `subida_documento` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2562 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `subidadocumento`
---
-
-INSERT INTO `subidadocumento` (`ID`, `creado_el`, `subida_documento`) VALUES
-(2560, '2022-04-10 17:46:46', 'imagenes/Ã­ndicee.png'),
-(2561, '2022-04-10 17:47:15', 'imagenes/Ã­ndice.png');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuarios`
---
-
-DROP TABLE IF EXISTS `usuarios`;
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`) VALUES
-(1, 'q', 'q@q.com', 'q'),
-(2, 's', 's', 's'),
-(3, 'd', 'd', 'ddd'),
-(4, 'n', 'n', 'n'),
-(5, 'b', 'b', 'bb'),
-(6, 'g', 'g', 'g'),
-(7, 'w', 'msb.caixa@gmail.com', 'ww'),
-(8, 'mo', 'msb.tesla@gmail.com', 'msb'),
-(9, 'h', 'msebti2@gmail.com', 'h'),
-(10, 'j', 'sebti.benzakour.mohammed@iescamas.es', 'j'),
-(11, 'u', 'sebti74@gmail.com', 'u'),
-(12, 'a', 'a', 'a');
+('SEQ_GEN', '1800');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
