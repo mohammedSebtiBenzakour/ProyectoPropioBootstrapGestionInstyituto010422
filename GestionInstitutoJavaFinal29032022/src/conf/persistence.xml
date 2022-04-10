@@ -14,6 +14,7 @@
     <class>entidades.Insertar_noticias</class>
     <class>entidades.Insertar_oferta</class>
     <class>entidades.Nivel_instituto</class>
+    <class>entidades.SubidaDocumento</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/instituto?serverTimezone=UTC&amp;usessl=false&amp;allowPublicKeyRetrieval=true"/>

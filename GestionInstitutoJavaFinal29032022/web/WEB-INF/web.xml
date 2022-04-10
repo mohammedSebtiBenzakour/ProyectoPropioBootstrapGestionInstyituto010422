@@ -195,6 +195,14 @@
     <servlet>
         <servlet-name>SubirImagen</servlet-name>
         <servlet-class>controlador.SubirImagen</servlet-class>
+         <multipart-config>
+            <max-file-size>10000000</max-file-size>
+            <max-request-size>10000000</max-request-size>
+        </multipart-config>
+        <init-param>
+            <param-name>longitudMaxima</param-name>
+            <param-value>10000000</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>CrearNivel</servlet-name>

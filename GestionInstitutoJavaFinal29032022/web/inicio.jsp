@@ -106,7 +106,7 @@
              <div class="imagen">
                 <img src="imagenes/1 (8).jpg" alt="">
                 <div class="overlay">
-                    <h2><a href="admin/insertarImagenes.jsp" class="esconderMenu">Insertar Imagenes</a></h2>
+                    <h2><a href="admin/insertarImagenes.jsp" class="esconderMenu">Subida y Inserción de imagenes y documentos</a></h2>
                 </div>
             </div>
 

@@ -16,6 +16,7 @@
         <title>Gestion Instituto</title>
         <link href="../css/inicio.css" rel="stylesheet" type="text/css"/>
         <link href="../css/estilosNotas.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/cam.css" rel="stylesheet" type="text/css"/>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     </head>
@@ -53,42 +54,34 @@
                 </div>
             </div>
         </nav>
-        <h1 class="d-flex justify-content-center">Inserción de imagenes </h1>
+        <h1 class="d-flex justify-content-center">Subida y Inserción de imagenes y de cualquier otro documento </h1>
 
-       
-        <section class="contenedor-imagenes pb-5">
+
+        <section class="contenedor-imagenes pb-5 mt-5">
             <form action="SubirImagen" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="file" name="imagen" class="form-control p-1">
+                    <input type="file" name="imagen" class="form-control p-1" required="">
                 </div>
                 <div class="form-group">
-                    <input type="submit" name="upload" class="btn btn-success mt-3 d-block" value="Subir Imagen">
+                    <input type="submit" name="subir" class="btn btn-success mt-3 d-block" value="Subir Imagen">
                 </div>
                 <div class="form-group">
-
-
                 </div>
-
             </form>
-
-
         </section>
-         <section class="container">
-             <label>la imagen</label>
-             
-            <img src="${fichero}" alt="">
-           
-            <% 
-                request.getAttribute("fichero");
-                
-System.out.println("eso es " + request.getAttribute("fichero"));
-                
-                %>
+        <section class="container mb-3">
+            <label class="container mb-3 w-50 d-flex justify-content-center align-items-center btn btn-warning shadow rounded text-uppercase botonInicio"><a href="hacerFotoPerfil.jsp" id="hacerFoto" class="">Hacer foto de perfil</a></label>
         </section>
+
+        
+        
+        <footer class="container mb-3 d-flex justify-content-center align-items-center btn btn-danger shadow rounded text-uppercase botonInicio">
+            <h2><a href="../inicio.jsp" class="botonInicio">Volver</a></h2>
+        </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="" type="text/javascript"></script>
-        <script src="" type="text/javascript"></script>
+        <script src="../js/photo.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </body>
 </html>

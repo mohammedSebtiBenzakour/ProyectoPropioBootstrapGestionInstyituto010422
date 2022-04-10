@@ -198,8 +198,11 @@ $arrayP = mysqli_fetch_array($queryP);
 			</div>
 		</div>
 		<div class="row pb-3">
-			<div class="col-md-12 mt-3">
+			<div class="col-md-6 mt-3">
 				<a class="btn btn-primary" href="../indexNuevo.php" role="button">Volver</a>
+			</div>
+			<div class="col-md-6 mt-3 ">
+				<a class="btn btn-primary" href="subidaDocumentosServido.php" role="button">Subir cualquier documento al servidor</a>
 			</div>
 		</div>
 	</div>
