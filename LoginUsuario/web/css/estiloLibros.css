@@ -8,25 +8,24 @@ and open the template in the editor.
     Author     : daw2
 */
 
- .inner{
-                position: relative;
-                margin: 0 auto;
-                width: 650px;
-                display: block;
-                padding: 50px 0;
-            }
-            h3{
-                text-align: center;
-                border-bottom: 2px solid midnightblue;
-                margin-bottom: 20px;
-            }
-            nav li a{
-                font-size: 25px;
-                font-weight: 500;
-            }
-            a{
-                color: #fff;
-                text-decoration: none;
-            }
-            
-         
+.inner{
+    position: relative;
+    margin: 0 auto;
+    width: 650px;
+    display: block;
+    padding: 50px 0;
+}
+h3{
+    text-align: center;
+    border-bottom: 2px solid midnightblue;
+    margin-bottom: 20px;
+}
+nav li a{
+    font-size: 25px;
+    font-weight: 500;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+

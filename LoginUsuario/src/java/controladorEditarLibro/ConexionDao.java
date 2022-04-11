@@ -15,9 +15,9 @@ import java.sql.SQLException;
  */
 public class ConexionDao {
      public static Connection conectarBD() throws SQLException {
-        String sqlConeccion = "jdbc:mysql://localhost:3306/todo?serverTimezone=UTC&usessl=false&allowPublicKeyRetrieval=true";
-        String usuarioBD = "todo";
-        String passBD = "todo";
+        String sqlConeccion = "jdbc:mysql://localhost:3306/instituto?serverTimezone=UTC&usessl=false&allowPublicKeyRetrieval=true";
+        String usuarioBD = "instituto";
+        String passBD = "instituto";
 
         DriverManager.registerDriver(new com.mysql.jdbc.Driver());
         return DriverManager.getConnection(sqlConeccion, usuarioBD, passBD);

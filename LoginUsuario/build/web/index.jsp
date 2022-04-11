@@ -79,9 +79,9 @@
                 <h1>Registrarse</h1>
                 <form action="ServletLogin" method="post">
                     <p>Email usuario</p>
-                    <input type="text" placeholder="email" name="email" required autocomplete="off">
+                    <input type="text" placeholder="email" name="email" required autocomplete="off" value="s">
                     <p> Password</p>
-                    <input type="password" placeholder="Password" name="password" required autocomplete="off">
+                    <input type="password" placeholder="Password" name="password" required autocomplete="off" value="s">
                     <input type="submit" value="Login">
                     <div class="span"><a href="olvidasteContrasenia.jsp">Olvidaste la contraseña?</a></div>
                     <div class="span"><a  href="registrarse.jsp">Already have Account?</a></div>

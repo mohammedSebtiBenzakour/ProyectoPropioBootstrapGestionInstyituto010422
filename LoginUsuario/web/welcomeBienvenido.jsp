@@ -34,62 +34,8 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Administración
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="login con sesiones/eleccionPorPerfiles.php" target="_blank">Pagina para acceder o crear perfiles</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/formularioRegistrar.php" target="_blank">Registrar Profesores</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/loginProfesores.php" target="_blank">Acceso Solo Profesores</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/documentacion.php" target="_blank">Jefatura</a></li>
-                                        <li><a class="dropdown-item" href="" target="_blank">Empleados</a></li>
-                                        <li><a class="dropdown-item" href="registrarAlumnos.php" target="_blank">Registrar Alumnos</a></li>
-                                        <li><a class="dropdown-item" href="#">Consultar Listado Alumnos</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost:8080/LoginUsuario/index.jsp">Biblioteca</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/crearNivelInstituto.php">Crear Nivel Educativo En el Instituto</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/formularioRegistrarPersonalNoDocente.php">Registrar Personal No Docente</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Departamentos
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="#">Formación Profesional</a></li>
-                                        <li><a class="dropdown-item" href="#">Formación Normal</a></li>
-                                        <li><a class="dropdown-item" href="login con sesiones/crearDepartamento.php">Crear Departamento</a></li>
-                                        <li><a class="dropdown-item" href="#">Otros</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Juegos Educativos
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="Encuesta/encuesta.php">Encuesta</a></li>
-                                        <li><a class="dropdown-item" href="#">El ahorcado</a></li>
-                                        <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
-                                        <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
-                                        <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
-                                        <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
-                                        <li><a class="dropdown-item" href="calculadora/calculadora.html">Calculadora</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Varios
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="Encuesta/encuesta.php">Encuesta</a></li>
-                                        <li><a class="dropdown-item" href="examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
-                                        <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
-                                        <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
-                                        <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
-                                        <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
-                                        <li><a class="dropdown-item" href="#">Calculadora</a></li>
-                                    </ul>
-                                </li>
+                                
+                              
                                 <li class="nav-item">
                                     <a class="nav-link" href="calendario.html">Calendario</a>
                                 </li>
@@ -104,7 +50,7 @@
             </div>
         </header>
         <div class="container">
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Datos del usuario conectado</button>
+            <button class="btn btn-primary mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Datos del usuario conectado</button>
 
             <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
                 <div class="offcanvas-header">
@@ -119,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <section class="container mt-5">
+        <section class="container mt-3">
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
