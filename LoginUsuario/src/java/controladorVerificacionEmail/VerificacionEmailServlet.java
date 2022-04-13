@@ -7,6 +7,7 @@ package controladorVerificacionEmail;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,39 +33,40 @@ public class VerificacionEmailServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=latin1");
+        request.setCharacterEncoding("latin1");
+        String mensaje = null;
+        String error = null;
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+
             String nombreUsuario = request.getParameter("nombreUsuario");
             String emailUsuario = request.getParameter("emailUsuario");
-            
+
             EnviarEmail em = new EnviarEmail();
             String codigoVerif = em.getRandom();
-            
+
             Usuario usuario = new Usuario(nombreUsuario, emailUsuario, codigoVerif);
-            
+
             boolean test = em.sendEmail(usuario);
-            
+
             if (test) {
                 HttpSession ses = request.getSession();
                 ses.setAttribute("usuario", usuario);
-                response.sendRedirect("verificacionEmailRespuesta.jsp");
+//                response.sendRedirect("verificacionEmailRespuesta.jsp");
+            } else {
+                error = "Error en la verificación del email ";
             }
-            
-            
-            
-            
-            
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet VerificacionEmailServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet VerificacionEmailServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+            if (error == null) {
+                mensaje = URLEncoder.encode("Se ha verificado el email ", "latin1");
+                response.sendRedirect(response.encodeRedirectURL("verificacionEmailRespuesta.jsp?mensaje=" + mensaje));
+            } else {
+                error = URLEncoder.encode(error, "latin1");
+                response.sendRedirect(response.encodeRedirectURL("verificacionEmail.jsp?mensaje=" + error));
+            }
+
         }
     }
 

@@ -3,6 +3,7 @@
     Created on : 31-dic-2021, 19:13:56
     Author     : daw2
 --%>
+<%@page import="controladorEditarLibro.Categoria"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.util.List"%>
 <%@page import="controladorEditarLibro.Libros"%>
@@ -10,15 +11,17 @@
 <%@page import="controladorEditarLibro.LibrosDao"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <%
-
+    Connection con = ConexionDao.conectarBD();
+    LibrosDao librosDao = new LibrosDao(con);
+    List<Libros> libros = librosDao.getLibros();
     request.getAttribute("libros");
 %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="latin1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <!-- Required meta tags -->
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=latin1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Bootstrap CSS -->
@@ -36,8 +39,38 @@
                 margin: 15px 0;
             }
         </style>
+        <script>
+
+        function mostrarMensaje() {
+            /* alert("${param.mensaje}");*/
+            let timerInterval
+            Swal.fire({
+                title: '${param.mensaje}!',
+                html: 'I will close in <b></b> milliseconds.',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                        b.textContent = Swal.getTimerLeft()
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            })
+        }
+
+    </script>
+        
     </head>
-    <body>
+   <body onload='${empty param.mensaje?"":"mostrarMensaje()"}' class="container">
         <div  class="container mt-2 bg-light">
             <nav class="navbar navbar-light">
                 <a class="navbar-brand">Bibilioteca</a>
@@ -52,7 +85,7 @@
             <div class="inner">
                 <div class="row">
                     <div class="col-3">
-                        <h3>AÃ±adir un libro a la lista</h3>
+                        <h3>Añadir un libro a la lista</h3>
                         <form action="ServletAniadirLibro" method="post">
                             <div class="form-group">
                                 <label>Nombre libro</label>
@@ -66,15 +99,18 @@
                                 <label>Autor libro</label>
                                 <input class="form-control" name="autorLibro" placeholder="Autor libro" required>
                             </div>
-                            <div class="form-group" >
-                                <label>Categoria libro</label>
-                                <select id="inputState" class="form-control" name="categoriaLibro" required>
-                                    <option selected disabled>Seleccionar Categoria</option>
-                                    <option value="Novel">Novel</option>
-                                    <option value="Science Fiction">Science Fiction</option>
-                                    <option value="Drama">Drama</option>
-                                    <option value="Programming & Development">Programming & Development</option>
-                                    <option value="Coches">Coches</option>
+                             <div class="form-group" >
+                                <label>Seleccionar Categoria libro</label>
+                                <select name="categoriaLibro" class="form-select mt-3" required>
+
+                                    <%
+                                        List<Categoria> categorias = librosDao.getCategoriaLibros();
+                                        for (Categoria cat : categorias) {
+                                    %>
+                                    <option value="<%=cat.getCategoriaLibro()%>"><%=cat.getCategoriaLibro()%></option>
+                                    <%
+                                        }
+                                    %>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary mt-2">Registrar</button>
@@ -97,12 +133,12 @@
                             </thead>
                             <tbody>
                                 <c:forEach var="tempBook" items="${libros}">
-                                    <tr>
+                                   <tr>
                                         <td>${tempBook.nombreLibro }</td>
                                         <td>${tempBook.descripcionLibro }</td>
                                         <td>${tempBook.autorLibro }</td>
-                                        <td>${tempBook.categoriaLibro}</td>
-                                        <td><a class="btn btn-success" href="editarLibro.jsp?id=${tempBook.id }">Modificar</a> 
+                                        <td>${tempBook.categoriaLibro.categoriaLibro}</td>
+                                        <td><a class="btn btn-success" href="ServletEditarLibro?id=${tempBook.id}&nombre_libro=${tempBook.nombreLibro}&descripcion_libro=${tempBook.descripcionLibro}&autor_libro=${tempBook.autorLibro}&categoria_libro=${tempBook.categoriaLibro.categoriaLibro}">Modificar</a> 
                                             <a class="btn btn-danger" href="ServletEliminarLibro?id=${tempBook.id}">Eliminar</a></td>
                                     </tr>
                                 </c:forEach>

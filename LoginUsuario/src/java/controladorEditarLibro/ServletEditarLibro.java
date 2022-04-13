@@ -8,8 +8,10 @@ package controladorEditarLibro;
 import controlador.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -37,47 +39,79 @@ public class ServletEditarLibro extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            response.setContentType("text/html;charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-            
-            String error = "";
+            response.setContentType("text/html;charset=latin1");
+            request.setCharacterEncoding("latin1");
+            String mensaje = null;
+            String error = null;
             Connection con = Conexion.conectarBD();
             int id = Integer.parseInt(request.getParameter("id"));
-            String nombreLibro = request.getParameter("nombreLibro");
-            String descripcionLibro = request.getParameter("descripcionLibro");
-            String autorLibro = request.getParameter("autorLibro");
-            String categoriaLibro = request.getParameter("categoriaLibro");
+            String nombreLibro = request.getParameter("nombre_libro");
+            String descripcionLibro = request.getParameter("descripcion_libro");
+            String autorLibro = request.getParameter("autor_libro");
+            String categoriaLibro = request.getParameter("categoria_libro");
+
+            System.out.println("la catelibr " + categoriaLibro);
+
+            LibrosDao librosDao = new LibrosDao(con);
+            Categoria cat = new Categoria();
+            cat.setCategoriaLibro(categoriaLibro);
+
+            List<Categoria> listaCategorias = null;
+            listaCategorias = librosDao.getCategoriaLibros();
+            request.setAttribute("listaCategorias", listaCategorias);
+            System.out.println("listaCategorias " + listaCategorias);
 
             Libros libro = new Libros();
             libro.setId(id);
             libro.setAutorLibro(autorLibro);
             libro.setDescripcionLibro(descripcionLibro);
             libro.setNombreLibro(nombreLibro);
-            libro.setCategoriaLibro(categoriaLibro);
+            libro.setCategoriaLibro(cat);
+            System.out.println("el boton " + request.getParameter("modificarCategoria"));
+            if (request.getParameter("modificarCategoria") == null) {
+                request.setAttribute("nombreLibro", libro.getNombreLibro());
+                request.setAttribute("descripcionLibro", libro.getDescripcionLibro());
+                request.setAttribute("autorLibro", libro.getAutorLibro());
+                request.setAttribute("categoriaLibro", libro.getCategoriaLibro().getCategoriaLibro());
+                request.setAttribute("id", libro.getId());
 
-            LibrosDao librosDao = new LibrosDao(con);
-            boolean test = librosDao.modificarLibro(libro);
+                getServletContext().getRequestDispatcher("/editarLibro.jsp").forward(request, response);
 
-            if (test) {
-                 response.sendRedirect("editarLibroIndex.jsp");
-                //  error = "todo correcto ";
             } else {
-                error = "Datos erroneos ";
+                System.out.println("el boton " + request.getParameter("modificarCategoria"));
+                libro.setId(id);
+                libro.setAutorLibro(autorLibro);
+                libro.setDescripcionLibro(descripcionLibro);
+                libro.setNombreLibro(nombreLibro);
+                cat.setCategoriaLibro(categoriaLibro);
+                libro.setCategoriaLibro(cat);
+//                librosDao.modificarLibro2(libro);
+                Libros l = librosDao.getLibro(id);
+
+                int idNuevo = l.getId();
+
+                System.out.println("idnuevo " + idNuevo);
+                System.out.println("idnuevo vvvv " + libro.getId());
+
+                if (idNuevo == libro.getId()) {
+                    librosDao.modificarLibro2(libro);
+                } else {
+                    error = "Datos erroneos ";
+                }
+
+                boolean test = librosDao.modificarLibro(libro);
+                System.out.println("el test " + test);
+
+                if (error == null) {
+                    mensaje = URLEncoder.encode("Se ha modificado el libro ", "latin1");
+                    response.sendRedirect(response.encodeRedirectURL("editarLibroIndex.jsp?mensaje=" + mensaje));
+                } else {
+                    error = URLEncoder.encode(error, "latin1");
+                    response.sendRedirect(response.encodeRedirectURL("editarLibroIndex.jsp?mensaje=" + error));
+                }
             }
 
-            try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet ServletEditarLibro</title>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Servlet ServletEditarLibro at " + request.getContextPath() + "</h1>");
-                out.println("<h1> " + error + "</h1>");
-                out.println("</body>");
-                out.println("</html>");
-            }
+//            
         } catch (SQLException ex) {
             Logger.getLogger(ServletEditarLibro.class.getName()).log(Level.SEVERE, null, ex);
         }

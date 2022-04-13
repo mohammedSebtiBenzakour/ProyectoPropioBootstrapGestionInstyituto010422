@@ -40,7 +40,8 @@ public class ServletLogin extends HttpServlet {
 
         String error = "";
         try {
-            response.setContentType("text/html;charset=UTF-8");
+            response.setContentType("text/html;charset=latin1");
+            request.setCharacterEncoding("latin1");
 
             String email = request.getParameter("email");
             String password = request.getParameter("password");

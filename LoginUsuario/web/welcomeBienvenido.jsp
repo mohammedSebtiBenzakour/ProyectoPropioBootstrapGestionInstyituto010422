@@ -4,7 +4,7 @@
     Author     : daw2
 --%>
 <%@page import="controlador.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="latin1"%>
 <% Usuario user = (Usuario) session.getAttribute("u");
     if (user == null) {
         response.sendRedirect("index.jsp");
@@ -14,15 +14,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=latin1">
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
         <link href="css/welcome.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
-        <title>JSP Page</title>
+        <title>Biblioteca</title>
     </head>
-    <body class="welcome">
+    <script>
+
+        function mostrarMensaje() {
+            /* alert("${param.mensaje}");*/
+            Swal.fire({
+                title: '${param.mensaje}',
+                type: 'success'
+            })
+        }
+
+    </script>
+    <body onload='${empty param.mensaje?"":"mostrarMensaje()"}' class="container welcome">
     <center>
         <header class="container pt-2 ">
             <div class="row">
@@ -34,8 +45,8 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                
-                              
+
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="calendario.html">Calendario</a>
                                 </li>
@@ -117,6 +128,7 @@
                 </div>
             </div>
         </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </center>
 </body>

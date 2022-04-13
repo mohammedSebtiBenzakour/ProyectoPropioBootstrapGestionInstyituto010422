@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="controlador.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="latin1"%>
 <% Usuario user = (Usuario) session.getAttribute("u");
     if (user == null) {
         response.sendRedirect("index.jsp");
@@ -15,7 +15,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <meta http-equiv="Content-Type" content="text/html; charset=latin1">
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="css/estiloCounterDown.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">

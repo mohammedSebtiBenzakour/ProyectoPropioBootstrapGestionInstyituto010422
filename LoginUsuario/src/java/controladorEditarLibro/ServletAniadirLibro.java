@@ -32,15 +32,20 @@ public class ServletAniadirLibro extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=latin1");
+        request.setCharacterEncoding("latin1");
 
         String error = "";
         String bname = request.getParameter("nombreLibro");
         String bdesc = request.getParameter("descripcionLibro");
         String athname = request.getParameter("autorLibro");
         String cat = request.getParameter("categoriaLibro");
-        Libros book = new Libros(bname, bdesc, athname, cat);
+        Categoria cate = new Categoria();
+        Libros book = null;
+        cate.setCategoriaLibro(cat);
+        cate.getCategoriaLibro();
+        book = new Libros(bname, bdesc, athname, cate);
+
         try {
             LibrosDao bkdao = new LibrosDao(Conexion.conectarBD());
             if (bkdao.añadirLibro(book)) {
@@ -54,19 +59,6 @@ public class ServletAniadirLibro extends HttpServlet {
             e.printStackTrace();
         }
 
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletAniadirLibro</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletAniadirLibro at " + request.getContextPath() + "</h1>");
-             out.println("<h1> " + error + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

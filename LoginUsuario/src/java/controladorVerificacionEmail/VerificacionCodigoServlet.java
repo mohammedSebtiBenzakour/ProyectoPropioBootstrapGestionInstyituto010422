@@ -8,6 +8,7 @@ package controladorVerificacionEmail;
 import controlador.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,12 +40,13 @@ public class VerificacionCodigoServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=latin1");
+        request.setCharacterEncoding("latin1");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String error = "";
-            String irA="";
-
+            String error = null;
+            String irA = null;
+            String mensaje = null;
             HttpSession ses = request.getSession();
             Usuario usuario = (Usuario) ses.getAttribute("usuario");
 
@@ -59,12 +61,20 @@ public class VerificacionCodigoServlet extends HttpServlet {
             String filas = rs.getString(1);
 
             if (codigoVerificacion.equals(usuario.getCodigoVerificacion()) && filas.equals(usuario.getEmail())) {
-                error = "Verificacion correcta";
+               // error = "Verificacion correcta";
                 irA = "<h2> " + "<a href=\"index.jsp\">Puedes acceder a la libreria Bienvenido identificandote con tu email</a>" + "</h2>";
-               
+
             } else {
                 error = "Codigo de verificacion es incorrecto";
                 irA = "<h2> " + "<a href=\"index.jsp\">Volver al principio</a>" + "</h2>";
+            }
+
+            if (error == null) {
+                mensaje = URLEncoder.encode("Verificacion correcta", "latin1");
+                response.sendRedirect(response.encodeRedirectURL("index.jsp?mensaje=" + mensaje));
+            } else {
+                error = URLEncoder.encode(error, "latin1");
+                response.sendRedirect(response.encodeRedirectURL("index.jsp?mensaje=" + error));
             }
 
             out.println("<!DOCTYPE html>");

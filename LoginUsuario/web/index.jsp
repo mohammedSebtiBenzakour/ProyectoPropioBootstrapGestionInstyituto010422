@@ -6,11 +6,11 @@
 
 
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="latin1"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=latin1">
         <link href="css/estiloInicial.css" rel="stylesheet" type="text/css"/>
         <link href="css/estiloNuevoFormularioReg.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
@@ -22,7 +22,18 @@
 
         <title>Web registro</title>
     </head>
-    <body>
+    <script>
+
+        function mostrarMensaje() {
+            /* alert("${param.mensaje}");*/
+            Swal.fire({
+                title: '${param.mensaje}',
+                type: 'success'
+            })
+        }
+
+    </script>
+    <body onload='${empty param.mensaje?"":"mostrarMensaje()"}' class="container welcome">
     <center>
         <header class="container pt-2">
             <div class="row">
@@ -42,7 +53,7 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        
+
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="#"></a></li>
@@ -68,7 +79,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto160222\ProyectoPropioBootstrapGestionInstyituto/indexNuevo.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto160222\ProyectoPropioBootstrapGestionInstyituto/indexNuevo.html">AdministraciÃ³n</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto160222\ProyectoPropioBootstrapGestionInstyituto/indexNuevo.html">Administración</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Acceder a la Biblioteca</li>
                 </ol>
             </nav>
@@ -83,9 +94,9 @@
                     <p> Password</p>
                     <input type="password" placeholder="Password" name="password" required autocomplete="off" value="s">
                     <input type="submit" value="Login">
-                    <div class="span"><a href="olvidasteContrasenia.jsp">Olvidaste la contraseÃ±a?</a></div>
-                    <div class="span"><a  href="registrarse.jsp">Already have Account?</a></div>
-                    <div class="span"><a  href="cambiarContrasenia.jsp">Cambiar ContraseÃ±a</a></div>
+                    <div class="span"><a href="olvidasteContrasenia.jsp">Olvidaste la contraseña?</a></div>
+                    <div class="span"><a  href="registrarse.jsp">Registrarse aquí</a></div>
+                    <div class="span"><a  href="cambiarContrasenia.jsp">Cambiar Contraseña</a></div>
                     <div class="span"><a href="verificacionEmail.jsp">Verificacion del Email</a></div>
                     <div class="span"><a href="cerrarSession.jsp">Cerrar session</a></div>
                     <div class="span"><a href="index.jsp">Volver</a></div>
@@ -117,9 +128,9 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <a href="olvidasteContrasenia.jsp" class="btn btn-primary">Olvidaste la contraseÃ±a?</a>
+                                <a href="olvidasteContrasenia.jsp" class="btn btn-primary">Olvidaste la contraseña?</a>
                                 <a href="registrarse.jsp" class="btn btn-primary">Already have Account?</a><br><br>
-                                <a href="cambiarContrasenia.jsp" class="btn btn-warning">Cambiar ContraseÃ±a</a><br><br>
+                                <a href="cambiarContrasenia.jsp" class="btn btn-warning">Cambiar Contraseña</a><br><br>
                                 <a href="verificacionEmail.jsp" class="btn btn-danger">Verificacion del Email</a><br><br>
                                 <a href="cerrarSession.jsp" class="btn btn-primary">Cerrar session</a> 
                                 <a href="index.jsp" class="btn btn-primary">Volver</a>
@@ -130,6 +141,7 @@
             </div>
         </div -->
         <!--        <h2><a href="registrarse.jsp">Ir a registrarse</a></h2>-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
     </center>
 </body>

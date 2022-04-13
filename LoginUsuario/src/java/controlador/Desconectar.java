@@ -32,12 +32,12 @@ public class Desconectar extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
+        response.setContentType("text/html;charset=latin1");
+        request.setCharacterEncoding("latin1");
         HttpSession session = request.getSession();
         session.removeAttribute("u");
         response.sendRedirect("index.jsp");
-       
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

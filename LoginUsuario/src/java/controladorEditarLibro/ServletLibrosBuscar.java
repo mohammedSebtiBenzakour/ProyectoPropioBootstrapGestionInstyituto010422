@@ -40,8 +40,8 @@ public class ServletLibrosBuscar extends HttpServlet {
 
         boolean test = false;
         try {
-            response.setContentType("text/html;charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html;charset=latin1");
+            request.setCharacterEncoding("latin1");
 
             String error = "";
             Connection con = Conexion.conectarBD();
@@ -58,7 +58,7 @@ public class ServletLibrosBuscar extends HttpServlet {
             if (test) {
                 //  response.sendRedirect("editarLibroBuscar.jsp");
                 request.getRequestDispatcher("editarLibroBuscar.jsp").forward(request, response);
-               // error = "todo correcto " + " el buscaar : " + buscar;
+                // error = "todo correcto " + " el buscaar : " + buscar;
             } else {
                 error = "Algun error suelto ";
             }

@@ -37,7 +37,8 @@ public class ServletRegistrar extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            response.setContentType("text/html;charset=UTF-8");
+            response.setContentType("text/html;charset=latin1");
+            request.setCharacterEncoding("latin1");
 
             String nombre = request.getParameter("nombre");
             String email = request.getParameter("email");
@@ -55,7 +56,7 @@ public class ServletRegistrar extends HttpServlet {
                 HttpSession sesion = request.getSession();
                 sesion.setAttribute("errorMessage", errorMessage);
                 response.sendRedirect("registrarse.jsp");
-               
+
             }
 
             try (PrintWriter out = response.getWriter()) {

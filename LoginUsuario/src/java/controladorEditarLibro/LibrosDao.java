@@ -9,6 +9,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
@@ -47,7 +50,31 @@ public class LibrosDao {
             ps.setString(1, libro.getNombreLibro());
             ps.setString(2, libro.getDescripcionLibro());
             ps.setString(3, libro.getAutorLibro());
-            ps.setString(4, libro.getCategoriaLibro());
+            ps.setString(4, libro.getCategoriaLibro().getCategoriaLibro());
+
+            ps.executeUpdate();
+
+            test = true;
+
+        } catch (SQLException e) {
+
+            e.printStackTrace();
+        }
+
+        return test;
+    }
+
+    public boolean aniadirCategoria(Categoria categoria) {
+        boolean test = false;
+
+        String sql = "insert into categoria_libro (categoria, creado_el) values ( ?,?)";
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        Timestamp tm = Timestamp.valueOf(timeStamp);
+        try {
+            PreparedStatement ps = this.con.prepareStatement(sql);
+           
+            ps.setString(1, categoria.getCategoriaLibro());
+            ps.setTimestamp(2, tm);
 
             ps.executeUpdate();
 
@@ -77,8 +104,9 @@ public class LibrosDao {
                 String descripcionLibro = rs.getString("descripcionLibro");
                 String autorLibro = rs.getString("autorLibro");
                 String categoriaLibro = rs.getString("categoriaLibro");
-
-                Libros libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, categoriaLibro);
+                Categoria cat = new Categoria();
+                cat.setCategoriaLibro(categoriaLibro);
+                Libros libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, cat);
                 libros.add(libro);
             }
 
@@ -86,6 +114,30 @@ public class LibrosDao {
             ex.printStackTrace();
         }
         return libros;
+    }
+
+    public List<Categoria> getCategoriaLibros() {
+
+        List<Categoria> categorias = new LinkedList<>();
+
+        String sql = "select * from categoria_libro";
+        try {
+
+            PreparedStatement ps = this.con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                String categoriaLibro = rs.getString("categoria");
+                Categoria categoria = new Categoria(categoriaLibro);
+
+                categorias.add(categoria);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return categorias;
     }
 
     public boolean modificarLibro(Libros libro) {
@@ -98,7 +150,8 @@ public class LibrosDao {
             ps.setString(1, libro.getNombreLibro());
             ps.setString(2, libro.getDescripcionLibro());
             ps.setString(3, libro.getAutorLibro());
-            ps.setString(4, libro.getCategoriaLibro());
+           
+            ps.setString(4, libro.getCategoriaLibro().getCategoriaLibro());
             ps.setInt(5, libro.getId());
 
             ps.executeUpdate();
@@ -107,6 +160,29 @@ public class LibrosDao {
             ex.printStackTrace();
         }
         return test;
+    }
+    
+    public void modificarLibro2(Libros libro) {
+
+        boolean test = false;
+        String sql = "update libros set nombreLibro = ? , descripcionLibro = ? , autorLibro = ? , categoriaLibro = ? where id = ?";
+
+        try {
+            PreparedStatement ps = this.con.prepareStatement(sql);
+            ps.setString(1, libro.getNombreLibro());
+            ps.setString(2, libro.getDescripcionLibro());
+            ps.setString(3, libro.getAutorLibro());
+           
+            ps.setString(4, libro.getCategoriaLibro().getCategoriaLibro());
+            ps.setInt(5, libro.getId());
+
+            ps.execute();
+            test = true;
+           
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+       
     }
 
     public Libros getLibro(int id) {
@@ -130,7 +206,10 @@ public class LibrosDao {
                 String autorLibro = rs.getString("autorLibro");
                 String categoriaLibro = rs.getString("categoriaLibro");
 
-                libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, categoriaLibro);
+                Categoria cat = new Categoria();
+                cat.setCategoriaLibro(categoriaLibro);
+
+                libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, cat);
 
             }
 
@@ -160,9 +239,9 @@ public class LibrosDao {
 
         List<Libros> libros = new LinkedList<>();
 
-       String sql = "select * from libros where nombreLibro like '%" + buscar + "%' or descripcionLibro like '%" + buscar + "%'"
-               + " or autorLibro like '%"+buscar+"%'";
-     //    String sql = "select * from libros where nombreLibro like '%" + "sebt" + "%'";
+        String sql = "select * from libros where nombreLibro like '%" + buscar + "%' or descripcionLibro like '%" + buscar + "%'"
+                + " or autorLibro like '%" + buscar + "%'";
+        //    String sql = "select * from libros where nombreLibro like '%" + "sebt" + "%'";
         try {
 
             PreparedStatement ps = this.con.prepareStatement(sql);
@@ -175,7 +254,10 @@ public class LibrosDao {
                 String autorLibro = rs.getString("autorLibro");
                 String categoriaLibro = rs.getString("categoriaLibro");
 
-                Libros libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, categoriaLibro);
+                Categoria cat = new Categoria();
+                cat.setCategoriaLibro(categoriaLibro);
+
+                Libros libro = new Libros(id, nombreLibro, descripcionLibro, autorLibro, cat);
                 libros.add(libro);
             }
 
@@ -183,6 +265,14 @@ public class LibrosDao {
             ex.printStackTrace();
         }
         return libros;
+    }
+
+    public static void main(String[] args) {
+        LibrosDao ld = new LibrosDao();
+
+        List<Libros> listA = ld.getLibros();
+
+        System.out.println(listA.toString());
     }
 
 }

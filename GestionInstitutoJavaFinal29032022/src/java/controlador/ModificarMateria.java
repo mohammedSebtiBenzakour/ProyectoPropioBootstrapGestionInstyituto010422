@@ -57,7 +57,7 @@ public class ModificarMateria extends HttpServlet {
         listaProfesores = consultaP.getResultList();
         request.setAttribute("listaProfesores", listaProfesores);
         Registrar_usuarios prof = new Registrar_usuarios();
-         String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+        String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         String materia = request.getParameter("materia");
         String descripcion_materia = request.getParameter("descripcion_materia");
         String dniProfesor = request.getParameter("profesor");

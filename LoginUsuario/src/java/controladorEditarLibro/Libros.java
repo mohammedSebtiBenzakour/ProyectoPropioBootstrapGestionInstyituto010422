@@ -14,12 +14,13 @@ public class Libros {
     private String nombreLibro;
     private String descripcionLibro;
     private String autorLibro;
-    private String categoriaLibro;
+   
+    private Categoria categoriaLibro;
 
     public Libros() {
     }
 
-    public Libros(int id, String nombreLibro, String descrpcionLibro, String autorLibro, String categoriaLibro) {
+    public Libros(int id, String nombreLibro, String descrpcionLibro, String autorLibro, Categoria categoriaLibro) {
         this.id = id;
         this.nombreLibro = nombreLibro;
         this.descripcionLibro = descrpcionLibro;
@@ -27,18 +28,18 @@ public class Libros {
         this.categoriaLibro = categoriaLibro;
     }
 
-    public Libros(String nombreLibro, String descrpcionLibro, String autorLibro, String categoriaLibro) {
+    public Libros(String nombreLibro, String descrpcionLibro, String autorLibro, Categoria categoriaLibro) {
         this.nombreLibro = nombreLibro;
         this.descripcionLibro = descrpcionLibro;
         this.autorLibro = autorLibro;
         this.categoriaLibro = categoriaLibro;
     }
 
-    public String getCategoriaLibro() {
+    public Categoria getCategoriaLibro() {
         return categoriaLibro;
     }
 
-    public void setCategoriaLibro(String categoriaLibro) {
+    public void setCategoriaLibro(Categoria categoriaLibro) {
         this.categoriaLibro = categoriaLibro;
     }
 

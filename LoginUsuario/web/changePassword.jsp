@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="controlador.Conexion"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="latin1"%>
 <%@page import="java.sql.*"%>
 <%@page import="java.io.*"%>
 <%
@@ -47,15 +47,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <meta http-equiv="Content-Type" content="text/html; charset=latin1">
 
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
-        <title>Cambio contraseÃ±a</title>
+        <title>Cambio contraseña</title>
     </head>
 
     <body>
     <center>
-        <h1>Cambio contraseÃ±a</h1>
+        <h1>Cambio contraseña</h1>
     </center>
 </body>
 </html>
