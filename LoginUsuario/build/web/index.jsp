@@ -78,8 +78,8 @@
         <div class="container navbar-light bg-light">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto160222\ProyectoPropioBootstrapGestionInstyituto/indexNuevo.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto160222\ProyectoPropioBootstrapGestionInstyituto/indexNuevo.html">Administración</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Administración</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Acceder a la Biblioteca</li>
                 </ol>
             </nav>
@@ -103,44 +103,6 @@
                 </form>
             </div>
         </div>
-        <!--div class="container">
-            <div id="main-container" class="container-fluid">
-                <div class="row">
-                    <div id="auth-form" class="card border-primary">
-                        <h1 class="card-header bg-primary text-white">
-                            Registrarse</h1>
-                        <div class="card-body">
-                            <form class="panel-body" action="ServletLogin" method="post">
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <label>Email usuario</label>
-                                    </span>
-                                    <input type="text" id="email" name="email" class="form-control" placeholder="email" autocomplete="off">
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <label>Password</label>
-                                    </span>
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
-                                </div>
-                                <button type="submit" class="btn btn-success">Login</button>
-                            </form>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <a href="olvidasteContrasenia.jsp" class="btn btn-primary">Olvidaste la contraseña?</a>
-                                <a href="registrarse.jsp" class="btn btn-primary">Already have Account?</a><br><br>
-                                <a href="cambiarContrasenia.jsp" class="btn btn-warning">Cambiar Contraseña</a><br><br>
-                                <a href="verificacionEmail.jsp" class="btn btn-danger">Verificacion del Email</a><br><br>
-                                <a href="cerrarSession.jsp" class="btn btn-primary">Cerrar session</a> 
-                                <a href="index.jsp" class="btn btn-primary">Volver</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div -->
-        <!--        <h2><a href="registrarse.jsp">Ir a registrarse</a></h2>-->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
     </center>

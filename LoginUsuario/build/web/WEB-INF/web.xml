@@ -20,6 +20,10 @@
         <servlet-name>ChangePassword</servlet-name>
         <servlet-class>controlador.ChangePassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Pdf</servlet-name>
+        <servlet-class>controladorEditarLibro.Pdf</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletAniadirCategoria</servlet-name>
         <url-pattern>/ServletAniadirCategoria</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ChangePassword</servlet-name>
         <url-pattern>/ChangePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Pdf</servlet-name>
+        <url-pattern>/Pdf</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

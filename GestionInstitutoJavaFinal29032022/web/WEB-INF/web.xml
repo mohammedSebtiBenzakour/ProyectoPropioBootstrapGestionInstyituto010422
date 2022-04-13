@@ -195,7 +195,7 @@
     <servlet>
         <servlet-name>SubirImagen</servlet-name>
         <servlet-class>controlador.SubirImagen</servlet-class>
-         <multipart-config>
+        <multipart-config>
             <max-file-size>10000000</max-file-size>
             <max-request-size>10000000</max-request-size>
         </multipart-config>
@@ -203,6 +203,10 @@
             <param-name>longitudMaxima</param-name>
             <param-value>10000000</param-value>
         </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>GraficaNotas</servlet-name>
+        <servlet-class>controlador.GraficaNotas</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CrearNivel</servlet-name>
@@ -399,6 +403,10 @@
     <servlet-mapping>
         <servlet-name>SubirImagen</servlet-name>
         <url-pattern>/admin/SubirImagen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GraficaNotas</servlet-name>
+        <url-pattern>/admin/GraficaNotas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

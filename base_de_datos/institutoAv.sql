@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 13-04-2022 a las 18:52:55
+-- Tiempo de generación: 10-04-2022 a las 16:31:56
 -- Versión del servidor: 5.7.31
 -- Versión de PHP: 7.3.21
 
@@ -20,37 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `instituto`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `categoria_libro`
---
-
-DROP TABLE IF EXISTS `categoria_libro`;
-CREATE TABLE IF NOT EXISTS `categoria_libro` (
-  `categoria` varchar(200) NOT NULL,
-  `creado_el` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`categoria`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `categoria_libro`
---
-
-INSERT INTO `categoria_libro` (`categoria`, `creado_el`) VALUES
-('Novela', '2022-04-12 11:07:12'),
-('Ciencia Ficción', '2022-04-12 11:07:12'),
-('Drama', '2022-04-12 11:08:09'),
-('Programming & Development', '2022-04-12 11:08:09'),
-('Coches', '2022-04-12 11:08:09'),
-('oooo', '2022-04-12 12:11:11'),
-('sa', '2022-04-13 07:26:47'),
-('ds', '2022-04-13 07:29:02'),
-('df', '2022-04-13 07:29:24'),
-('cdx', '2022-04-13 07:33:38'),
-('asdfgh', '2022-04-13 10:02:26'),
-('xcxcxcxcx', '2022-04-13 10:27:29');
 
 -- --------------------------------------------------------
 
@@ -276,23 +245,25 @@ CREATE TABLE IF NOT EXISTS `libros` (
   `descripcionLibro` varchar(50) DEFAULT NULL,
   `autorLibro` varchar(50) DEFAULT NULL,
   `categoriaLibro` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `FK_libros_categoria` (`categoriaLibro`)
-) ENGINE=MyISAM AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `libros`
 --
 
 INSERT INTO `libros` (`id`, `nombreLibro`, `descripcionLibro`, `autorLibro`, `categoriaLibro`) VALUES
-(91, 'a', 'a', 'a', 'Drama'),
-(2, 'Savages, The', 'Comedy|Drama', 'V8 Vantage', 'Ciencia Ficción'),
-(3, 'Almost You', 'Comedy|Drama', 'Tacoma', 'Drama'),
-(4, 'Charm School (Niñas mal)', 'Comedy', 'Tucson', 'Coches'),
-(5, 'Madonna of the Seven Moons', 'Drama|Mystery', 'Tracer', 'Novela'),
-(6, 'Three (a.k.a. 3 Extremes II) (Saam gaang)', 'Horror|Mystery', 'V40', 'df'),
-(7, 'Hangover Square', 'Crime|Drama|Horror|Thriller', 'LX', 'Drama'),
-(10, 'Cosmic Psychos: Blokes You Can Trust', 'Documentary|Musical', '3500', 'Drama');
+(1, 'sebti', 'Action|Adventure|Crime|Thriller', 'Spirit', NULL),
+(2, 'Savages, The', 'Comedy|Drama', 'V8 Vantage', 'Aston Martin'),
+(3, 'Almost You', 'Comedy|Drama', 'Tacoma', 'Toyota'),
+(4, 'Charm School (Niñas mal)', 'Comedy', 'Tucson', 'Hyundai'),
+(5, 'Madonna of the Seven Moons', 'Drama|Mystery', 'Tracer', 'Mercury'),
+(6, 'Three (a.k.a. 3 Extremes II) (Saam gaang)', 'Horror|Mystery', 'V40', 'Volvo'),
+(7, 'Hangover Square', 'Crime|Drama|Horror|Thriller', 'LX', 'Lexus'),
+(8, 'Mutiny on the Bounty', 'Adventure|Drama', 'S-Class', 'Mercedes-Benz'),
+(9, 'Soulless', 'Comedy|Drama', 'iQ', 'Scion'),
+(10, 'Cosmic Psychos: Blokes You Can Trust', 'Documentary|Musical', '3500', 'GMC'),
+(32, 'mohammed', 'mohammed', 'mohammed', 'Coches');
 
 -- --------------------------------------------------------
 
@@ -703,7 +674,7 @@ CREATE TABLE IF NOT EXISTS `subidadocumento` (
   `creado_el` varchar(255) DEFAULT NULL,
   `subida_documento` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2563 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2562 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `subidadocumento`
@@ -711,8 +682,7 @@ CREATE TABLE IF NOT EXISTS `subidadocumento` (
 
 INSERT INTO `subidadocumento` (`ID`, `creado_el`, `subida_documento`) VALUES
 (2560, '2022-04-10 17:46:46', 'imagenes/Ã­ndicee.png'),
-(2561, '2022-04-10 17:47:15', 'imagenes/Ã­ndice.png'),
-(2562, '2022-04-13 14:19:32', 'imagenes/Ã­ndice.png');
+(2561, '2022-04-10 17:47:15', 'imagenes/Ã­ndice.png');
 
 -- --------------------------------------------------------
 
@@ -728,7 +698,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -742,12 +712,11 @@ INSERT INTO `usuarios` (`id`, `nombre`, `email`, `password`) VALUES
 (5, 'b', 'b', 'bb'),
 (6, 'g', 'g', 'g'),
 (7, 'w', 'msb.caixa@gmail.com', 'ww'),
-(8, 'mo', 'msb.tesla@gmail.com', '12'),
+(8, 'mo', 'msb.tesla@gmail.com', 'msb'),
 (9, 'h', 'msebti2@gmail.com', 'h'),
 (10, 'j', 'sebti.benzakour.mohammed@iescamas.es', 'j'),
 (11, 'u', 'sebti74@gmail.com', 'u'),
-(12, 'a', 'a', 'a'),
-(13, 'v', 'v', 'vv');
+(12, 'a', 'a', 'a');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

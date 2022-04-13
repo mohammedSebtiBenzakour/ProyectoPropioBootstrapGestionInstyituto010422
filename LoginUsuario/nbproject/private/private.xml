@@ -3,15 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/web/editarLibroBuscar.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/web/welcomeBienvenido.jsp</file>
             <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/web/index.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/src/java/controladorEditarLibro/ServletEliminarLibro.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/src/java/controladorEditarLibro/ServletLibrosBuscar.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/src/java/controladorEditarLibro/ServletAniadirLibro.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/src/java/controladorEditarLibro/LibrosDao.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/web/editarLibro.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/LoginUsuario/web/editarLibroIndex.jsp</file>
         </group>
     </open-files>
 </project-private>
