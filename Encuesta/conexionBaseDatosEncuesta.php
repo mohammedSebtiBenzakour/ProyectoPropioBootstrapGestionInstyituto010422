@@ -13,9 +13,9 @@ private $charset ;
 public function __construct(){
 
 	$this->host = "localhost";
-	$this->usuario ="todo";
-	$this->contraseña = "todo";
-	$this->nombreBaseDatos = "todo";
+	$this->usuario ="instituto";
+	$this->contraseña = "instituto";
+	$this->nombreBaseDatos = "instituto";
 	$this->charset ="utf8mb4";
 
 

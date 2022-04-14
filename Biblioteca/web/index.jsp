@@ -1,36 +1,52 @@
 <%-- 
-    Document   : olvidasteContrasenia
-    Created on : 31-dic-2021, 20:10:46
+    Document   : index
+    Created on : 30-dic-2021, 22:59:40
     Author     : daw2
 --%>
+
+
 
 <%@page contentType="text/html" pageEncoding="latin1"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=latin1">
-        <link href="css/estiloForgotPassword.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estiloInicial.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estiloNuevoFormularioReg.css" rel="stylesheet" type="text/css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="css/estiloNuevoFormularioReg.css" rel="stylesheet" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
         <link rel="stylesheet" href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
         <link href="css/estiloNuevoFormularioReg.css" rel="stylesheet" type="text/css"/>
-        <title>Forgot Password JSP</title>
+
+        <title>Biblioteca</title>
     </head>
-    <body>
-        <header class="container d-flex justify-content-center pt-2">
+    <script>
+
+        function mostrarMensaje() {
+            /* alert("${param.mensaje}");*/
+            Swal.fire({
+                title: '${param.mensaje}',
+                type: 'success'
+            })
+        }
+
+    </script>
+    <body onload='${empty param.mensaje?"":"mostrarMensaje()"}' class="container welcome">
+    <center>
+        <header class="container pt-2">
             <div class="row">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Olvidaste la contraseña</a>
+                        <a class="navbar-brand" href="#">Identificarse para acceder a la biblioteca</a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav ">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                   
+                                    <a class="nav-link active" aria-current="page" href="#"></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"></a>
@@ -59,30 +75,36 @@
                 </nav>
             </div>
         </header>
-        <section class="container d-flex justify-content-center align-items-center mt-3 ">
-            <div class="row">
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Olvidaste la contraseña</h5>
-                        <p class="card-text">Pasos a seguir para restaurar la contraseña</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">1. Introducir vuestro email</li>
-                        <li class="list-group-item">2. El sistema le mandara una clave a tu email</li>
-                        <li class="list-group-item">3. Introducir la clave en la siguiente pagina</li>
-                    </ul>
-                    <div class="card-body">
-                        <form action="ForgotPassword" method="post">
-                            Introducir Email : <input type="text" name="email" required=""  />
-                            <input type="hidden" value="1" name="hidden"> 
-                            <input class="btn btn-outline-danger mt-2" type="submit" name="send" value="Enviar datos" />
-                            <a class="btn btn-outline-success mt-2" href="index.jsp">Volver</a>
-                        </form>
-                    </div>
-                </div>
+        <div class="container navbar-light bg-light">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Administración</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Acceder a la Biblioteca</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="regbox box">
+                <img class="avatar" src="img/user-avatar.png">
+                <h1>Registrarse</h1>
+                <form action="ServletLogin" method="post">
+                    <p>Email usuario</p>
+                    <input type="text" placeholder="email" name="email" required autocomplete="off" value="s">
+                    <p> Password</p>
+                    <input type="password" placeholder="Password" name="password" required autocomplete="off" value="s">
+                    <input type="submit" value="Login">
+                    <div class="span"><a href="olvidasteContrasenia.jsp">Olvidaste la contraseña?</a></div>
+                    <div class="span"><a  href="registrarse.jsp">Registrarse aquí</a></div>
+                    <div class="span"><a  href="cambiarContrasenia.jsp">Cambiar Contraseña</a></div>
+                    <div class="span"><a href="verificacionEmail.jsp">Verificacion del Email</a></div>
+                    <div class="span"><a href="cerrarSession.jsp">Cerrar session</a></div>
+                    <div class="span"><a href="index.jsp">Volver</a></div>
+                </form>
             </div>
-        </section>
+        </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
-    </body>
+    </center>
+</body>
 </html>

@@ -99,7 +99,7 @@
         <h2><%= resultado%></h2>
 
         <form action="" method="post">
-            <p> <input type="text" name="letra" placeholder="insertar letra" autocomplete="off" autofocus <%= disabled%> required></p>
+            <p> <input type="text" name="letra" placeholder="insertar letra" maxlength="1" autocomplete="off" autofocus <%= disabled%> required></p>
             <p> <input type="submit" name="submit" value="submit" <%= disabled%> id="submit"></p>
         </form>
         <a href="index.jsp">Volver</a>

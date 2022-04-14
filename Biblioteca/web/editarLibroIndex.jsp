@@ -37,6 +37,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.css"/>
         <link href="css/nuevosEstilos.css" rel="stylesheet" type="text/css"/>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="" type="text/javascript"></script>
         <title>Bibilioteca</title>
 
         <style>
@@ -74,6 +75,11 @@
             })
         }
 
+        function myFunction(x) {
+            x.style.background = "yellow";
+
+        }
+
     </script>
     <body onload='${empty param.mensaje?"":"mostrarMensaje()"}' class="container">
         <div  class="container mt-2 bg-light">
@@ -103,13 +109,13 @@
                             </div>
                             <div class="form-group">
                                 <label>Autor libro</label>
-                                <input class="form-control" name="autorLibro" placeholder="Autor libro" required>
+                                <input class="form-control" name="autorLibro" placeholder="Autor libro" required  >
                             </div>
 
                             <div class="form-group" >
                                 <label>Seleccionar Categoria libro</label>
-                                <select name="categoriaLibro" class="form-select mt-3" required>
-
+                                <select name="categoriaLibro" class="form-select" required data-bs-toggle="tooltip" data-bs-html="true" title="Si no esta la categoria puedes crearla antes justo abajo..." >
+                                    <option value="">Seleccionar Una categoria</option>
                                     <%
                                         List<Categoria> categorias = librosDao.getCategoriaLibros();
                                         for (Categoria cat : categorias) {
@@ -164,9 +170,13 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.11.5/datatables.min.js"></script>
@@ -176,6 +186,7 @@
         $(document).ready(function () {
             $('table').DataTable();
         });
+
         </script>
     </body>
 </html>
