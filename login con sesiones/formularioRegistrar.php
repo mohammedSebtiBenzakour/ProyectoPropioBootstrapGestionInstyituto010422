@@ -35,6 +35,10 @@ if (!isset($usuario) || !isset($perfil)) {
 	$query = mysqli_query($connection, $consultar);
 	$array = mysqli_fetch_array($query);
 
+	$consultarP = "select * from perfiles";
+	$queryP = mysqli_query($connection, $consultarP);
+	$arrayP = mysqli_fetch_array($queryP);
+
 
 	?>
 
@@ -92,7 +96,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_dni">DNI *</label>
-							<input id="form_dni" type="text" name="dni" class="form-control" placeholder="Por Favor introduce el dni *" required="required" data-error="dni is required.">
+							<input id="form_dni" type="text" name="dni" value="22222222S" class="form-control" placeholder="Por Favor introduce el dni *" required="required" data-error="dni is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -101,7 +105,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_name">Nombre *</label>
-							<input id="form_name" type="text" name="nombre" class="form-control" placeholder="Por Favor introduce el Nombre *" required="required" data-error="Firstname is required.">
+							<input id="form_name" type="text" id="nombre" value="a" name="nombre" class="form-control" placeholder="Por Favor introduce el Nombre *" required="required" data-error="Firstname is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -110,7 +114,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_lastname">Apellidos *</label>
-							<input id="form_lastname" type="text" name="apellidos" class="form-control" placeholder="Por Favor introduce los Apellidos *" required="required" data-error="Lastname is required.">
+							<input id="form_lastname" type="text" name="apellidos" value="a" class="form-control" placeholder="Por Favor introduce los Apellidos *" required="required" data-error="Lastname is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -119,7 +123,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_usuario">Nombre de usuario *</label>
-							<input id="form_usuario" type="text" name="usuario" class="form-control" placeholder="Por Favor introduce el Nombre de usuario *" required="required" data-error="Firstname is required.">
+							<input id="form_usuario" type="text" name="usuario" value="a" class="form-control" placeholder="Por Favor introduce el Nombre de usuario *" required="required" data-error="Firstname is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -128,7 +132,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_password">Contraseña *</label>
-							<input id="form_password" type="password" name="password" class="form-control" placeholder="Por Favor introduce la Contraseña *" required="required" data-error="Valid email is required.">
+							<input id="form_password" type="password" name="password" value="a" class="form-control" placeholder="Por Favor introduce la Contraseña *" required="required" data-error="Valid email is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -137,7 +141,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_email">Email *</label>
-							<input id="form_email" type="email" name="email" class="form-control" placeholder="Por Favor introduce el email *" required="required" data-error="Valid email is required.">
+							<input id="form_email" type="email" name="email" value="msb.duck@gmail.com" class="form-control" placeholder="Por Favor introduce el email *" required="required" data-error="Valid email is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -146,7 +150,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_departamento">Departamento *</label>
-							<select name="departamento" id="form_departamento" required="required" data-error="Valid departamento is required." class="form-control" >
+							<select name="departamento" id="form_departamento" value="a" required="required" data-error="Valid departamento is required." class="form-control" >
 								<option selected disabled value="">Por Favor elegir un departamento...</option>
 								<?php foreach ($query as $row) { ?>
 									<option value="<?php echo $row['nombre_departamento']; ?>"><?php echo $row['nombre_departamento']; ?></option>
@@ -159,8 +163,22 @@ if (!isset($usuario) || !isset($perfil)) {
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
+							<label for="form_perfil">Perfil *</label>
+							<select name="perfil" id="form_perfil" value="a" required="required" data-error="Valid perfil is required." class="form-control" >
+								<option selected disabled value="">Por Favor elegir un perfil...</option>
+								<?php foreach ($queryP as $row) { ?>
+									<option value="<?php echo $row['perfil']; ?>"><?php echo $row['perfil']; ?></option>
+								<?php } ?>
+							</select>
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
 							<label for="form_fecha">Dirección *</label>
-							<textarea id="form_fecha" type="text" name="direccion" class="form-control" placeholder="Por Favor introduce el la direccion *" required="required" data-error="Valid direccion is required."></textarea>
+							<textarea id="form_fecha" type="text" name="direccion"  class="form-control" placeholder="Por Favor introduce el la direccion *" required="required" data-error="Valid direccion is required.">addddddd</textarea>
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -169,7 +187,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_ciudad">Ciudad *</label>
-							<input id="form_ciudad" type="text" name="ciudad" class="form-control" placeholder="Por Favor introduce el ciudad *" required="required" data-error="Valid ciudad is required.">
+							<input id="form_ciudad" type="text" name="ciudad" value="a" class="form-control" placeholder="Por Favor introduce el ciudad *" required="required" data-error="Valid ciudad is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -178,7 +196,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_pais">Pais *</label>
-							<input id="form_pais" type="text" name="pais" class="form-control" placeholder="Por Favor introduce el pais *" required="required" data-error="Valid pais is required.">
+							<input id="form_pais" type="text" name="pais" value="a" class="form-control" placeholder="Por Favor introduce el pais *" required="required" data-error="Valid pais is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -189,7 +207,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_fecha">Fecha de nacimiento *</label>
-							<input id="form_fecha" type="date" name="fecha" class="form-control" placeholder="Por Favor introduce el fecha *" required="required" data-error="Valid fecha is required.">
+							<input id="form_fecha" type="date" name="fecha" value="22/04/2022" class="form-control" placeholder="Por Favor introduce el fecha *" required="required" data-error="Valid fecha is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -199,7 +217,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_telefono">Teléfono *</label>
-							<input id="form_telefono" type="text" name="telefono" class="form-control" placeholder="Por Favor introduce el la telefono *" required="required" data-error="Valid telefono is required.">
+							<input id="form_telefono" type="text" name="telefono" value="a" class="form-control" placeholder="Por Favor introduce el la telefono *" required="required" data-error="Valid telefono is required.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -221,7 +239,7 @@ if (!isset($usuario) || !isset($perfil)) {
 
 			<div class="row pt-3">
 				<div class="col-md-6">
-					<input type="submit" class="btn btn-success btn-send" value="Registrarse">
+					<input type="submit" class="btn btn-success btn-send" value="Registrarse" id="registrar">
 				</div>
 				<div class="col-md-4">
 					<a class="btn btn-primary" href="loginProfesores.php" role="button">Salir</a>
@@ -241,5 +259,6 @@ if (!isset($usuario) || !isset($perfil)) {
 	<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
 	<script type="text/javascript" src=""></script>
 	<script type="text/javascript" src="../js/validarLoginProfesores.js"></script>
+	<script type="text/javascript" src=""></script>
 </body>
 </html>
