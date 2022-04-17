@@ -1,4 +1,5 @@
 <?php 
+require_once('valorSeguro.php');
 
 session_start();
 
@@ -24,6 +25,10 @@ if (!isset($usuario) || !isset($perfil)) {
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css"  href="../css/estiloMenuAside.css">
+	<link rel="stylesheet" type="text/css"  href="../css/errores.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
 	<title>Formulario para registrar profesores</title>
 </head>
 <body>
@@ -40,6 +45,21 @@ if (!isset($usuario) || !isset($perfil)) {
 	$arrayP = mysqli_fetch_array($queryP);
 
 
+	?>
+	<?php
+	if(isset($_GET['mensaje']) == 'ok') {
+		?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				swal({
+					title: '<?php echo $_GET['respuesta']; ?>',
+					text: '<?php echo $_GET['respuesta']; ?>',
+					type: 'success'
+				});
+			});
+		</script>
+		<?php
+	}
 	?>
 
 	<div class="container">
@@ -96,8 +116,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_dni">DNI *</label>
-							<input id="form_dni" type="text" name="dni" value="22222222S" class="form-control" placeholder="Por Favor introduce el dni *" required="required" data-error="dni is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_dni" type="text" name="dni" value="<?php if(isset($_SESSION['dni'])) echo $_SESSION['dni'] ; ?>" class="form-control" placeholder="Por Favor introduce el dni * (00000000X)" required="required" data-error="dni is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorDn'])) echo $_SESSION['errorDn'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -105,8 +125,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_name">Nombre *</label>
-							<input id="form_name" type="text" id="nombre" value="a" name="nombre" class="form-control" placeholder="Por Favor introduce el Nombre *" required="required" data-error="Firstname is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_name" type="text" id="nombre" value="<?php if(isset($_SESSION['nombre'])) echo $_SESSION['nombre'] ; ?>" name="nombre" class="form-control" placeholder="Por Favor introduce el Nombre * (Solo letras se admite acentos)" required="required" data-error="Firstname is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorN'])) echo $_SESSION['errorN'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -114,8 +134,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_lastname">Apellidos *</label>
-							<input id="form_lastname" type="text" name="apellidos" value="a" class="form-control" placeholder="Por Favor introduce los Apellidos *" required="required" data-error="Lastname is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_lastname" type="text" name="apellidos" value="<?php if(isset($_SESSION['apellidos'])) echo $_SESSION['apellidos'] ; ?>" class="form-control" placeholder="Por Favor introduce los Apellidos * (Solo letras se admite acentos)" required="required" data-error="Lastname is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorAp'])) echo $_SESSION['errorAp'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -123,8 +143,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_usuario">Nombre de usuario *</label>
-							<input id="form_usuario" type="text" name="usuario" value="a" class="form-control" placeholder="Por Favor introduce el Nombre de usuario *" required="required" data-error="Firstname is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_usuario" type="text" name="usuario" value="<?php if(isset($_SESSION['usu'])) echo $_SESSION['usu'] ; ?>" class="form-control" placeholder="Por Favor introduce el Nombre usuario * (No se admite acentos)" required="required" data-error="Firstname is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorU'])) echo $_SESSION['errorU'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -132,8 +152,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_password">Contraseña *</label>
-							<input id="form_password" type="password" name="password" value="a" class="form-control" placeholder="Por Favor introduce la Contraseña *" required="required" data-error="Valid email is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_password" type="password" name="password" value="" class="form-control" placeholder="Por Favor introduce la Contraseña * (No se admite acentos)" required="required" data-error="Valid email is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorP'])) echo $_SESSION['errorP'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -141,8 +161,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_email">Email *</label>
-							<input id="form_email" type="email" name="email" value="msb.duck@gmail.com" class="form-control" placeholder="Por Favor introduce el email *" required="required" data-error="Valid email is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_email" type="email" name="email" value="<?php if(isset($_SESSION['email'])) echo $_SESSION['email'] ; ?>" class="form-control" placeholder="Por Favor introduce el email * ejemplo: (mmm@mmm.com)" required="required" data-error="Valid email is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorE'])) echo $_SESSION['errorE'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -178,8 +198,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_fecha">Dirección *</label>
-							<textarea id="form_fecha" type="text" name="direccion"  class="form-control" placeholder="Por Favor introduce el la direccion *" required="required" data-error="Valid direccion is required.">addddddd</textarea>
-							<div class="help-block with-errors"></div>
+							<textarea id="form_fecha" type="text" name="direccion"  class="form-control" placeholder="Por Favor introduce el la direccion * (Se admite acentos)" required="required" data-error="Valid direccion is required."><?php if(isset($_SESSION['direccion'])) echo $_SESSION['direccion'] ; ?></textarea>
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorD'])) echo $_SESSION['errorD'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -187,8 +207,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_ciudad">Ciudad *</label>
-							<input id="form_ciudad" type="text" name="ciudad" value="a" class="form-control" placeholder="Por Favor introduce el ciudad *" required="required" data-error="Valid ciudad is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_ciudad" type="text" name="ciudad" value="<?php if(isset($_SESSION['ciudad'])) echo $_SESSION['ciudad'] ; ?>" class="form-control" placeholder="Por Favor introduce el ciudad * (Solo se admite la ñ)" required="required" data-error="Valid ciudad is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorC'])) echo $_SESSION['errorC'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -196,8 +216,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_pais">Pais *</label>
-							<input id="form_pais" type="text" name="pais" value="a" class="form-control" placeholder="Por Favor introduce el pais *" required="required" data-error="Valid pais is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_pais" type="text" name="pais" value="<?php if(isset($_SESSION['pais'])) echo $_SESSION['pais'] ; ?>" class="form-control" placeholder="Por Favor introduce el pais * (Solo se admite la ñ)" required="required" data-error="Valid pais is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorP'])) echo $_SESSION['errorP'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -208,7 +228,7 @@ if (!isset($usuario) || !isset($perfil)) {
 						<div class="form-group">
 							<label for="form_fecha">Fecha de nacimiento *</label>
 							<input id="form_fecha" type="date" name="fecha" value="22/04/2022" class="form-control" placeholder="Por Favor introduce el fecha *" required="required" data-error="Valid fecha is required.">
-							<div class="help-block with-errors"></div>
+							<div class="help-block with-errors "></div>
 						</div>
 					</div>
 				</div>
@@ -217,8 +237,8 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_telefono">Teléfono *</label>
-							<input id="form_telefono" type="text" name="telefono" value="a" class="form-control" placeholder="Por Favor introduce el la telefono *" required="required" data-error="Valid telefono is required.">
-							<div class="help-block with-errors"></div>
+							<input id="form_telefono" type="text" name="telefono" value="<?php if(isset($_SESSION['telefono'])) echo $_SESSION['telefono'] ; ?>" class="form-control" placeholder="Por Favor introduce el la telefono * (+34 o 0034 o 34 xxx xxx xxx)" required="required" data-error="Valid telefono is required.">
+							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorT'])) echo $_SESSION['errorT'] ;  ?></div>
 						</div>
 					</div>
 				</div>
@@ -239,7 +259,7 @@ if (!isset($usuario) || !isset($perfil)) {
 
 			<div class="row pt-3">
 				<div class="col-md-6">
-					<input type="submit" class="btn btn-success btn-send" value="Registrarse" id="registrar">
+					<input type="submit" class="btn btn-success btn-send" value="Registrarse" id="registrar" name="registrar">
 				</div>
 				<div class="col-md-4">
 					<a class="btn btn-primary" href="loginProfesores.php" role="button">Salir</a>
@@ -262,3 +282,39 @@ if (!isset($usuario) || !isset($perfil)) {
 	<script type="text/javascript" src=""></script>
 </body>
 </html>
+
+<?php 
+
+unset($_SESSION['dni']);
+unset($_SESSION['nombre']);
+unset($_SESSION['apellidos']);
+unset($_SESSION['usu']);
+unset($_SESSION['email']);
+unset($_SESSION['direccion']);
+unset($_SESSION['ciudad']);
+unset($_SESSION['pais']);
+unset($_SESSION['telefono']);
+
+unset($_SESSION['errorDn']);
+
+unset($_SESSION['errorN']);
+
+unset($_SESSION['errorAp']);
+
+unset($_SESSION['errorU']);
+
+unset($_SESSION['errorP']);
+
+unset($_SESSION['errorE']);
+
+unset($_SESSION['errorD']);
+
+unset($_SESSION['errorC']);
+
+unset($_SESSION['errorT']);
+
+
+
+
+
+?>

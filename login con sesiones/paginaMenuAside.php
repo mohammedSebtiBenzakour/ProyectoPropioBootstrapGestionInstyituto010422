@@ -165,9 +165,8 @@ $arrayP = mysqli_fetch_array($queryP);
 				</nav>
 			</div>
 			<div class="col pt-2">
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
+				<form class="d-flex ps-3" method="post" action="salir.php">
+					<button class="btn btn-outline-success" type="submit">Cerrar session</button>
 				</form>
 			</div>
 
@@ -316,7 +315,7 @@ $arrayP = mysqli_fetch_array($queryP);
 										</table>
 										<div class="row">
 											<div class="col-4">
-												<a class="btn btn-primary" href="registrarAlumnos.php" role="button">Volver a formulario de registro</a>
+												<a class="btn btn-primary mb-3" href="registrarAlumnos.php" role="button">Volver a formulario de registro</a>
 											</div>
 
 											<div class="col-4">
@@ -413,9 +412,9 @@ $arrayP = mysqli_fetch_array($queryP);
 
 									<h2 class="modal__title">¡Listado de alumnos!</h2>
 									<p class="modal__paragraph">Listado de alumnos.</p>
-										<a href="generarPDFAlumnos.php" target="_blank" class="btn btn-warning m-1 float-end "><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Exportar a PDF</a>
-										<a href="generarExcelAlumnos.php" class="btn btn-success m-1 float-end "><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Exportar a excel</a>
-										<a href="generarXMLAlumnos.php" class="btn btn-warning m-1 float-end " target="_blank"><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Imprimir XML</a>
+									<a href="generarPDFAlumnos.php" target="_blank" class="btn btn-warning m-1 float-end "><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Exportar a PDF</a>
+									<a href="generarExcelAlumnos.php" class="btn btn-success m-1 float-end "><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Exportar a excel</a>
+									<a href="generarXMLAlumnos.php" class="btn btn-warning m-1 float-end " target="_blank"><i class="fas fa-table fa-lg"></i>&nbsp;&nbsp;Imprimir XML</a>
 									<a href="#" class="modal__close1">Cerrar Modal</a>
 								</div>
 							</section>
