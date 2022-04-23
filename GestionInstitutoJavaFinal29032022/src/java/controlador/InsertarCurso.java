@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import central.ClaseParaValidarDatos;
 import dao.CursoJpaController;
 import entidades.Curso;
 import java.io.IOException;
@@ -55,21 +56,32 @@ public class InsertarCurso extends HttpServlet {
         String curso = request.getParameter("curso");
         String descripcion = request.getParameter("descricpion");
 
-        cu.setCurso(curso);
-        cu.setDescripcion_curso(descripcion);
-        cu.setFecha_creacion(timeStamp);
+        if (ClaseParaValidarDatos.validarDatosNumeros(curso) == true) {
+            if (ClaseParaValidarDatos.validarDatos(descripcion) == true) {
 
-        try {
-            cujc.create(cu);
-        } catch (Exception ex) {
-            if (ex.getMessage().contains("Duplicate entry")) {
-                error = "Ya existe el curso " + cu.getCurso();
+                cu.setCurso(curso);
+                cu.setDescripcion_curso(descripcion);
+                cu.setFecha_creacion(timeStamp);
+
+                try {
+                    cujc.create(cu);
+                } catch (Exception ex) {
+                    if (ex.getMessage().contains("Duplicate entry")) {
+                        error = "Ya existe el curso " + cu.getCurso();
+                    } else {
+                        error = "Error al insertar el curso (" + ex.getMessage() + ")";
+                        System.out.println("el error es " + error);
+                        System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                    }
+                }
             } else {
-                error = "Error al insertar el curso (" + ex.getMessage() + ")";
-                System.out.println("el error es " + error);
-                System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                error = "La descripcion no es correcta";
             }
+
+        } else {
+            error = "El formato del curso no es correcto";
         }
+
         //Si no hay ningun error se dirige a una pagina o a otra   
         if (error == null) {
             mensaje = URLEncoder.encode("Se ha creado el curso " + cu.getCurso(), "latin1");
@@ -78,8 +90,11 @@ public class InsertarCurso extends HttpServlet {
             return;
         } else {
 
-            request.setAttribute("error", error);
-            getServletContext().getRequestDispatcher("/admin/insertarCurso.jsp").forward(request, response);
+            mensaje = URLEncoder.encode("Error en el curso o la descripcion ", "latin1");
+            response.sendRedirect(response.encodeRedirectURL("insertarCurso.jsp?mensaje=" + mensaje));
+            return;
+//            request.setAttribute("error", error);
+//            getServletContext().getRequestDispatcher("/admin/insertarCurso.jsp").forward(request, response);
         }
 
     }

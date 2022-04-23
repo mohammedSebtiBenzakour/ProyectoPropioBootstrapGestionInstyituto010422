@@ -63,7 +63,7 @@
                                 <form class="requires-validation" novalidate action="InsertarCurso" method="post">
 
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="curso" placeholder="Año Curso" required>
+                                        <input class="form-control" type="text" name="curso" placeholder="Año Curso * (xxxx-xxxx)" required>
                                         <div class="valid-feedback">Año Curso field is valid!</div>
                                         <div class="invalid-feedback">Año Curso field cannot be blank!</div>
                                     </div>

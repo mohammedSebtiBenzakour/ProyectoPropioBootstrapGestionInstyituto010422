@@ -21,5 +21,19 @@ public class ClaseParaValidarDatos {
 
         Matcher m = p.matcher(nombre);
         return m.find();
+        
+        //^[0-9]{4}-[0-9]{4}$
+    }
+    
+     public static boolean validarDatosNumeros(String nombre) {
+        String patronRegular = "^[0-9]{4}-[0-9]{4}$";
+
+        String patron = "^\\pL+[\\pL\\pZ\\pP]{0,}$";
+        Pattern p = Pattern.compile(patronRegular, Pattern.CASE_INSENSITIVE);
+
+        Matcher m = p.matcher(nombre);
+        return m.find();
+        
+        //^[0-9]{4}-[0-9]{4}$
     }
 }

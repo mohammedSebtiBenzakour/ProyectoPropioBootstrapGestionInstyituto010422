@@ -61,10 +61,14 @@ public class EnviarEmailGeneral extends HttpServlet {
     public void init() {
         // reads SMTP server setting from web.xml file
 
-        host = "smtp.gmail.com";
+//        host = "smtp.gmail.com";
+//        port = "587";
+//        user = "msb.caixa@gmail.com";
+//        pass = "93345900";
+        host = "smtp.office365.com";
         port = "587";
-        user = "msb.caixa@gmail.com";
-        pass = "93345900";
+        user = "msb.iescamas@outlook.com";
+        pass = "Msb.93345900";
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -101,7 +105,7 @@ public class EnviarEmailGeneral extends HttpServlet {
             System.out.println("el mensaje " + resultMessage);
 
         } else {
-             resultMessage = "El email NO es valido.";
+            resultMessage = "El email NO es valido.";
         }
         if (resultMessage == null) {
             mensaje = URLEncoder.encode("Se ha enviado el email al nombre " + "latin1");
@@ -113,7 +117,7 @@ public class EnviarEmailGeneral extends HttpServlet {
     }
 
     public static boolean validarEmail(String email) {
-        String patron = "^[_A-Za-z0-9-\\\\+]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\\\.[A-Za-z0-9]+)*(\\\\.[A-Za-z]{2,})$";
+        String patron = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
         Pattern p = Pattern.compile(patron);
 
         Matcher m = p.matcher(email);
