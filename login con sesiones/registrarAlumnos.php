@@ -96,7 +96,7 @@
 				<div class="col-12">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+							<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 							<li class="breadcrumb-item"><a href="paginaMenuAside.php">Administración</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Registrar Alumnos</li>
 						</ol>
@@ -202,7 +202,7 @@
 							<div class="help-block with-errors errores"><?php if(isset($_SESSION['errorPais'])) echo $_SESSION['errorPais'] ;  ?></div>
 							<hr>
 							<button class="btn btn-primary register" type="submit" name="registrar">Registrar</button>
-							<a class="btn btn-primary" href="../indexNuevo.php" role="button">Salir</a>
+							<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 							<a class="btn btn-success ms-4" href="paginaMenuAside.php" role="button">Volver</a>
 						</form>
 					</div>

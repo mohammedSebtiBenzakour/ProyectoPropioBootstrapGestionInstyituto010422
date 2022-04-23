@@ -17,7 +17,7 @@
 			<textarea name="message" cols="30" rows="10" placeholder="Escribe aqui vuestro Feedback:"></textarea>
 			<button class="btn" type="submit" name="enviar"  >Enviar Feedback</button>
 		</form>
-		<a class="btn btn-outline-warning" href="../indexNuevo.php" role="button">Volver</a>
+		<a class="btn btn-outline-warning" href="indexNuevo.php" role="button">Volver</a>
 	</div>
 	
 </body>

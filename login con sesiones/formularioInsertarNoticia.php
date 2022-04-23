@@ -6,7 +6,7 @@ session_start();
 $usuario = $_SESSION['usuario'] ;
 $perfil = $_SESSION['perfil'] ;
 if (!isset($usuario) || !isset($perfil)) {
-	header("location: loginProfesores.php");
+	header("location: loginPorPerfiles.php");
 }else{
 
 // 	echo "<h1>Bienvenido : $usuario </h1>";
@@ -23,9 +23,28 @@ if (!isset($usuario) || !isset($perfil)) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 	<link rel="stylesheet" type="text/css"  href="../css/estiloMenuAside.css">
-	<title>Insertar Oferta</title>
+	<link rel="stylesheet" type="text/css"  href="../css/errores.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css"/>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.js"></script>
+	<title>Insertar Noticia</title>
 </head>
 <body>
+	<?php
+	if(isset($_GET['mensaje']) == 'ok') {
+		?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				swal({
+					title: '<?php echo $_GET['respuesta']; ?>',
+					text: '<?php echo $_GET['respuesta']; ?>',
+					type: 'success'
+				});
+			});
+		</script>
+		<?php
+	}
+	?>
 	<div class="container">
 		<div class="row pt-3">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -60,7 +79,7 @@ if (!isset($usuario) || !isset($perfil)) {
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="formularioInsertarNoticia.php">Introducir Noticias</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Formulario para registrar noticias</li>
 				</ol>
@@ -75,7 +94,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="form_name">Nombre de la noticia*</label>
-							<input id="form_name" type="text" name="nombre_noticia" class="form-control" placeholder="Porfavor Introduce la referencia de la oferta *" required="required" data-error="Tienes que rellenar la referencia.">
+							<input id="form_name" type="text" name="nombre_noticia" class="form-control" placeholder="Introduce la referencia de la oferta * (Se admite acentos)" required="required" data-error="Tienes que rellenar la referencia.">
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
@@ -87,12 +106,12 @@ if (!isset($usuario) || !isset($perfil)) {
 					<div class="col-md-12">
 						<div class="form-group">
 							<label for="form_message">Texto de la noticia *</label>
-							<textarea id="form_message" name="texto_noticia" class="form-control" placeholder="Descripción de la oferta  *" rows="4"  data-error="Tienes que rellenar la descripcion de la oferta."></textarea>
+							<textarea id="form_message" name="texto_noticia" class="form-control" placeholder="Descripción de la oferta  * (Se admite acentos)" rows="4"  data-error="Tienes que rellenar la descripcion de la oferta."></textarea>
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<input type="submit" class="btn btn-success btn-send mt-2" value="Registrar noticia">
+						<input type="submit" class="btn btn-success btn-send mt-2" value="Registrar noticia" id="registrar" name="registrar" >
 					</div>
 					<div class="col-md-6">
 						<button type="button" class="btn btn-warning btn-send mt-2" value="Volver a los listados"><a href="paginaMenuAside.php">Volver a los listados</a></button>
@@ -113,3 +132,15 @@ if (!isset($usuario) || !isset($perfil)) {
 
 	</body>
 	</html>
+
+	<?php 
+
+	unset($_SESSION['nombre_noticia']);
+	unset($_SESSION['texto_noticia']);
+
+	unset($_SESSION['errorNombreNoticia']);
+	unset($_SESSION['errorTextoNoticia']);
+
+
+
+?>

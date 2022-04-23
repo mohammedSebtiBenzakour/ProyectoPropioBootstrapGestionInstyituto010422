@@ -79,7 +79,7 @@
 			<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Login General</li>
 					</ol>
 				</nav>
@@ -147,13 +147,13 @@
 			</div>
 			<div class="row p-4">
 				<div class="col">
-					<a class="btn btn-outline-info" href="loginProfesores.php" role="button">Reiniciar</a>
+					<a class="btn btn-outline-info" href="loginPorPerfiles.php" role="button">Reiniciar</a>
 				</div>
 				<div class="col">
 					<a class="btn btn-outline-success" href="formularioRegistrar.php" role="button">Si no estas registrado Pulsa aquí</a>
 				</div>
 				<div class="col">
-					<a class="btn btn-outline-warning" href="../indexNuevo.html" role="button">Volver</a>
+					<a class="btn btn-outline-warning" href="indexNuevo.php" role="button">Volver</a>
 				</div>
 			</div>
 		</div>

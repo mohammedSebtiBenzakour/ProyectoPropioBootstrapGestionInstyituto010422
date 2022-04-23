@@ -1,6 +1,6 @@
 <?php 
 
-require_once('login con sesiones/conexion.php');
+require_once('conexion.php');
 
 $consultar = "select * from insertar_noticias";
 $query = mysqli_query($connection, $consultar);
@@ -18,20 +18,20 @@ $array = mysqli_fetch_array($query);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gestión de un Instítuto</title>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="css/horaSimple.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="css/flag-icon.min.css">
-    <link rel="stylesheet" type="text/css"  href="css/index.css">
-    <link rel="stylesheet" type="text/css"  href="css/indexSlider.css">
-    <link rel="stylesheet" type="text/css"  href="css/textoDinamico.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/horaSimple.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css"  href="../css/index.css">
+    <link rel="stylesheet" type="text/css"  href="../css/indexSlider.css">
+    <link rel="stylesheet" type="text/css"  href="../css/textoDinamico.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css"  href="css/estiloSlideShow.css">
-    <link rel="stylesheet" type="text/css"  href="css/portofolio.css">
-    <link rel="stylesheet" type="text/css"  href="css/footer.css">
-    <link rel="stylesheet" type="text/css"  href="css/ventanaModal.css">
-    <link rel="stylesheet" type="text/css"  href="css/cookies.css">
+    <link rel="stylesheet" type="text/css"  href="../css/estiloSlideShow.css">
+    <link rel="stylesheet" type="text/css"  href="../css/portofolio.css">
+    <link rel="stylesheet" type="text/css"  href="../css/footer.css">
+    <link rel="stylesheet" type="text/css"  href="../css/ventanaModal.css">
+    <link rel="stylesheet" type="text/css"  href="../css/cookies.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -43,15 +43,15 @@ $array = mysqli_fetch_array($query);
             <div class="col">
             </div>
             <div class="col">
-             <div id='rssBlock'>
-               <p class="cnnContents">
-                   <span class="marqueeStyle">&nbsp;Bienvenido al instituto</span>
-                   <!-- duplicate above, change style to allow continous scroll -->
-               </p>
-           </div>
-       </div>
-       <div class="col pt-2 mb-2 d-flex flex-row-reverse colores col-lg-2">
-           <div class="dropdown">
+               <div id='rssBlock'>
+                 <p class="cnnContents">
+                     <span class="marqueeStyle">&nbsp;Bienvenido al instituto</span>
+                     <!-- duplicate above, change style to allow continous scroll -->
+                 </p>
+             </div>
+         </div>
+         <div class="col pt-2 mb-2 d-flex flex-row-reverse colores col-lg-2">
+             <div class="dropdown">
               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Idiomas
             </button>
@@ -70,80 +70,83 @@ $array = mysqli_fetch_array($query);
 <nav class="container">
     <div class="row">
         <div class="col ">
-         <div class='time' id='time'></div>
-     </div>
- </div>
- <div class="row">
+           <div class='time' id='time'></div>
+       </div>
+   </div>
+   <div class="row">
     <div class="col ">
-       <nav class="navbar navbar-expand-lg navbar-light  bg-light ">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="login con sesiones/loginPorPerfiles.php">Login</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item dropdown disabled" hidden>
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Administración
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                        <li><a class="dropdown-item" href="login con sesiones/eleccionPorPerfiles.php" target="_blank">Pagina para acceder o crear perfiles</a></li>
-                        <li><a class="dropdown-item" href="login con sesiones/formularioRegistrar.php" target="_blank">Registrar Profesores</a></li>
-                        <li><a class="dropdown-item" href="login con sesiones/loginProfesores.php" target="_blank">Acceso Solo Profesores</a></li>
-                        <li><a class="dropdown-item" href="login con sesiones/documentacion.php" target="_blank">Jefatura</a></li>
-                        <li><a class="dropdown-item" href="" target="_blank">Empleados</a></li>
-                        <li><a class="dropdown-item" href="#">Conserjes</a></li>
-                        <li><a class="dropdown-item" href="registrarAlumnos.php" target="_blank">Registrar Alumnos</a></li>
-                        <li><a class="dropdown-item" href="#">Consultar Listado Alumnos</a></li>
-                        <li><a class="dropdown-item" href="http://localhost:8080/LoginUsuario/index.jsp">Biblioteca</a></li>
-                        <li><a class="dropdown-item" href="login con sesiones/crearNivelInstituto.php">Crear Nivel Educativo En el Instituto</a></li>
-                        <li><a class="dropdown-item" href="login con sesiones/formularioRegistrarPersonalNoDocente.php">Registrar Personal No Docente</a></li>
-                    </ul>
-                </li>
+     <nav class="navbar navbar-expand-lg navbar-light  bg-light ">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="loginPorPerfiles.php">Login</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
                 <li class="nav-item dropdown disabled" hidden>
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Departamentos
+                    Administración
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Formación Profesional</a></li>
-                    <li><a class="dropdown-item" href="#">Formación Normal</a></li>
-                    <li><a class="dropdown-item" href="login con sesiones/crearDepartamento.php">Crear Departamento</a></li>
-                    <li><a class="dropdown-item" href="#">Otros</a></li>
+                    <li><a class="dropdown-item" href="eleccionPorPerfiles.php" target="_blank">Pagina para acceder o crear perfiles</a></li>
+                    <li><a class="dropdown-item" href="formularioRegistrar.php" target="_blank">Registrar Profesores</a></li>
+                    <li><a class="dropdown-item" href="loginProfesores.php" target="_blank">Acceso Solo Profesores</a></li>
+                    <li><a class="dropdown-item" href="documentacion.php" target="_blank">Jefatura</a></li>
+                    <li><a class="dropdown-item" href="" target="_blank">Empleados</a></li>
+                    <li><a class="dropdown-item" href="#">Conserjes</a></li>
+                    <li><a class="dropdown-item" href="registrarAlumnos.php" target="_blank">Registrar Alumnos</a></li>
+                    <li><a class="dropdown-item" href="#">Consultar Listado Alumnos</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/LoginUsuario/index.jsp">Biblioteca</a></li>
+                    <li><a class="dropdown-item" href="crearNivelInstituto.php">Crear Nivel Educativo En el Instituto</a></li>
+                    <li><a class="dropdown-item" href="formularioRegistrarPersonalNoDocente.php">Registrar Personal No Docente</a></li>
                 </ul>
             </li>
-            <li class="nav-item dropdown ">
+            <li class="nav-item dropdown disabled" hidden>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Juegos Educativos
+                Departamentos
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="Encuesta/encuesta.php">Encuesta</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
-                <li><a class="dropdown-item" href="calculadora/calculadora.html">Calculadora</a></li>
-                <li><a class="dropdown-item" href="ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
+                <li><a class="dropdown-item" href="#">Formación Profesional</a></li>
+                <li><a class="dropdown-item" href="#">Formación Normal</a></li>
+                <li><a class="dropdown-item" href="crearDepartamento.php">Crear Departamento</a></li>
+                <li><a class="dropdown-item" href="#">Otros</a></li>
             </ul>
         </li>
-        <li class="nav-item dropdown disabled" hidden>
+        <li class="nav-item dropdown ">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Varios
+            Juegos Educativos
         </a>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="Encuesta/encuesta.php">Encuesta</a></li>
-            <li><a class="dropdown-item" href="examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
-            <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
-            <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
-            <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
-            <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
-            <li><a class="dropdown-item" href="#">Calculadora</a></li>
+            <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
+            <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
+            <li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
+            <li><a class="dropdown-item" href="../ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
         </ul>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="login con sesiones/calendario.html">Calendario</a>
-  </li>
+    <li class="nav-item dropdown disabled" hidden>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Varios
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+        <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+        <li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
+        <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
+        <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
+        <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
+        <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
+        <li><a class="dropdown-item" href="#">Calculadora</a></li>
+    </ul>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="apuntarTareas.html">Apuntar tareas</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="calendario.html">Calendario</a>
+</li>
 </ul>
 </div>
 </div>
@@ -181,7 +184,7 @@ $array = mysqli_fetch_array($query);
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="imagenesInstituto/1.jfif" class="d-block w-100" alt="El instituto" height="575vh">
+              <img src="../imagenesInstituto/1.jfif" class="d-block w-100" alt="El instituto" height="575vh">
               <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
                 <h1 class="losh1">Instituto M.S.B</h1>
             </div>
@@ -190,7 +193,7 @@ $array = mysqli_fetch_array($query);
             </div>
         </div>
         <div class="carousel-item">
-          <img src="imagenesInstituto/14.jfif" class="d-block w-100" alt="El instituto" height="575vh">
+          <img src="../imagenesInstituto/14.jfif" class="d-block w-100" alt="El instituto" height="575vh">
           <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
             <h1 class="losh1">Instituto M.S.B</h1>
         </div>
@@ -199,7 +202,7 @@ $array = mysqli_fetch_array($query);
         </div>
     </div>
     <div class="carousel-item">
-      <img src="imagenesInstituto/18.jfif" class="d-block w-100" alt="El instituto" height="575vh">
+      <img src="../imagenesInstituto/18.jfif" class="d-block w-100" alt="El instituto" height="575vh">
       <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
         <h1 class="losh1">Instituto M.S.B</h1>
     </div>
@@ -226,71 +229,71 @@ $array = mysqli_fetch_array($query);
 
 
           <section class="cc-carousel">
-           <div class="cc-carousel-container" data-carousel-position="1" data-animation-duration="2000" data-animation-position="0" data-animation-easing="linear">
-            <div
-            class="cc-card"
-            data-card-position="1"
-            data-image-src="imagenesInstituto/mascarilla.png"
-            data-image-size="cover"
-            data-background-position="center center"
-            data-background-color="f5f5f5"
-            >
-            <div class="cc-card-top">
-              <div class="cc-card-top-overlay"></div>
-              <h3>COVID</h3>
-          </div>
-          <div class="cc-card-bottom">
-              <h4>Med. COVID</h4>
-              <p class="card-details">
-               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-           </p>
-           <a href="javascript:void(0);" class="button-cta"></a>
-       </div>
-   </div>
-   <div
-   class="cc-card"
-   data-card-position="2"
-   data-image-src="imagenesInstituto/formulario.png"
-   data-image-size="cover"
-   data-background-position="center center"
-   data-background-color="f5f5f5"
-   >
-   <div class="cc-card-top">
-      <div class="cc-card-top-overlay"></div>
-      <h3>Ausencias</h3>
-  </div>
-  <div class="cc-card-bottom">
-      <h4>F. Ausencias</h4>
-      <p class="card-details">
-       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-   </p>
-   <a href="javascript:void(0);" class="button-cta"></a>
-</div>
-</div>
-<div
-class="cc-card"
-data-card-position="3"
-data-image-src="imagenesInstituto/actividades.png"
-data-image-size="cover"
-data-background-position="center center"
-data-background-color="f5f5f5"
->
-<div class="cc-card-top">
+             <div class="cc-carousel-container" data-carousel-position="1" data-animation-duration="2000" data-animation-position="0" data-animation-easing="linear">
+                <div
+                class="cc-card"
+                data-card-position="1"
+                data-image-src="../imagenesInstituto/mascarilla.png"
+                data-image-size="cover"
+                data-background-position="center center"
+                data-background-color="f5f5f5"
+                >
+                <div class="cc-card-top">
+                  <div class="cc-card-top-overlay"></div>
+                  <h3>COVID</h3>
+              </div>
+              <div class="cc-card-bottom">
+                  <h4>Med. COVID</h4>
+                  <p class="card-details">
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+                 </p>
+                 <a href="javascript:void(0);" class="button-cta"></a>
+             </div>
+         </div>
+         <div
+         class="cc-card"
+         data-card-position="2"
+         data-image-src="../imagenesInstituto/formulario.png"
+         data-image-size="cover"
+         data-background-position="center center"
+         data-background-color="f5f5f5"
+         >
+         <div class="cc-card-top">
+          <div class="cc-card-top-overlay"></div>
+          <h3>Ausencias</h3>
+      </div>
+      <div class="cc-card-bottom">
+          <h4>F. Ausencias</h4>
+          <p class="card-details">
+             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+         </p>
+         <a href="javascript:void(0);" class="button-cta"></a>
+     </div>
+ </div>
+ <div
+ class="cc-card"
+ data-card-position="3"
+ data-image-src="../imagenesInstituto/actividades.png"
+ data-image-size="cover"
+ data-background-position="center center"
+ data-background-color="f5f5f5"
+ >
+ <div class="cc-card-top">
   <div class="cc-card-top-overlay"></div>
   <h3>Actividades</h3>
 </div>
 <div class="cc-card-bottom">
   <h4>Actividades</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
 class="cc-card"
 data-card-position="4"
-data-image-src="imagenesInstituto/conusltas.png"
+data-image-src="../imagenesInstituto/conusltas.png"
 data-image-size="cover"
 data-background-position="center center"
 data-background-color="f5f5f5"
@@ -303,15 +306,15 @@ data-background-color="f5f5f5"
   <div class="cc-card-top-overlay"></div>
   <h4>Consultas</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
 class="cc-card"
 data-card-position="5"
-data-image-src="imagenesInstituto/transporte.jfif"
+data-image-src="../imagenesInstituto/transporte.jfif"
 data-image-size="cover"
 data-background-position="center center"
 data-background-color="f5f5f5"
@@ -323,15 +326,15 @@ data-background-color="f5f5f5"
 <div class="cc-card-bottom">
   <h4>Transporte</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
 class="cc-card"
 data-card-position="6"
-data-image-src="imagenesInstituto/incidencias.png"
+data-image-src="../imagenesInstituto/incidencias.png"
 data-image-size="cover"
 data-background-position="center center"
 data-background-color="f5f5f5"
@@ -343,9 +346,9 @@ data-background-color="f5f5f5"
 <div class="cc-card-bottom">
   <h4>Incidencias</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 </div>
@@ -443,7 +446,7 @@ data-background-color="f5f5f5"
         <div class="row">
           <div class="col-lg-4 col-md-6">
             <div class="portfolio-box shadow">
-              <img src="imagenesInstituto/tierra.jfif" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
+              <img src="../imagenesInstituto/tierra.jfif" alt="portfolio 1 image" title="portfolio 1 picture" class="img-fluid">
               <div class="portfolio-info">
                   <h4><a href="http://www.google.com">La tierra</a></h4>
                   <p>Sus curiosidades</p>
@@ -452,7 +455,7 @@ data-background-color="f5f5f5"
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="portfolio-box shadow">
-          <img src="imagenesInstituto/corazon.jfif" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
+          <img src="../imagenesInstituto/corazon.jfif" alt="portfolio 2 image" title="portfolio 2 picture" class="img-fluid">
           <div class="portfolio-info">
             <h4><a href="http://www.google.com">El corazon</a></h4>
             <p>Su alrededor</p>
@@ -461,7 +464,7 @@ data-background-color="f5f5f5"
 </div>
 <div class="col-lg-4 col-md-6">
     <div class="portfolio-box shadow">
-      <img src="imagenesInstituto/noSabias.png" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
+      <img src="../imagenesInstituto/noSabias.png" alt="portfolio 3 image" title="portfolio 3 picture" class="img-fluid">
       <div class="portfolio-info">
         <h4><a href="http://www.google.com">Cosas que no sabias</a></h4>
         <p>Realmente, sorprendente</p>
@@ -470,7 +473,7 @@ data-background-color="f5f5f5"
 </div>
 <div class="col-lg-4 col-md-6">
     <div class="portfolio-box shadow">
-      <img src="imagenesInstituto/curioso.png" alt="portfolio 4 image" title="portfolio 4 picture" class="img-fluid">
+      <img src="../imagenesInstituto/curioso.png" alt="portfolio 4 image" title="portfolio 4 picture" class="img-fluid">
       <div class="portfolio-info">
         <h4><a href="http://www.google.com">¿Eres curioso?</a></h4>
         <p>Este es tu lugar</p>
@@ -479,7 +482,7 @@ data-background-color="f5f5f5"
 </div>
 <div class="col-lg-4 col-md-6">
     <div class="portfolio-box shadow">
-      <img src="imagenesInstituto/sabiasQue.jfif" alt="portfolio 5 image" title="portfolio 5 picture" class="img-fluid">
+      <img src="../imagenesInstituto/sabiasQue.jfif" alt="portfolio 5 image" title="portfolio 5 picture" class="img-fluid">
       <div class="portfolio-info">
           <h4><a href="http://www.google.com">¿Sabias que?</a></h4>
           <p>Nunca lo adivinarias</p>
@@ -488,7 +491,7 @@ data-background-color="f5f5f5"
 </div>
 <div class="col-lg-4 col-md-6">
     <div class="portfolio-box shadow">
-      <img src="imagenesInstituto/cervantes.png" alt="portfolio 6 image" title="portfolio 6 picture" class="img-fluid">
+      <img src="../imagenesInstituto/cervantes.png" alt="portfolio 6 image" title="portfolio 6 picture" class="img-fluid">
       <div class="portfolio-info">
         <h4><a href="http://www.google.com">Algo de historia es primordial</a></h4>
         <p>Sus secretos</p>
@@ -509,7 +512,7 @@ data-background-color="f5f5f5"
             <span class="footer-title">Información especifica</span>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="login con sesiones/aviso_legal.php">Aviso legal</a>
+            <a class="nav-link" href="aviso_legal.php">Aviso legal</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Visitas</a>
@@ -531,13 +534,13 @@ data-background-color="f5f5f5"
         <a class="nav-link" href="#">La junta de Andalucía</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login con sesiones/formularioInsertarOferta.php">Introducir Ofertas de trabajo</a>
+        <a class="nav-link" href="formularioInsertarOferta.php">Introducir Ofertas de trabajo</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Otras noticias de interés</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login con sesiones/comoLlegar.php">Como llegar</a>
+        <a class="nav-link" href="comoLlegar.php">Como llegar</a>
     </li>
 </ul>
 </div>
@@ -550,20 +553,20 @@ data-background-color="f5f5f5"
         <span class="nav-link"><i class="fas fa-phone"></i>+34 655 173 174</span>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="simplechat/index.php"><i class="fas fa-comments"></i>Live chat</a>
+        <a class="nav-link" href="../simplechat/index.php"><i class="fas fa-comments"></i>Live chat</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login con sesiones/formularioContacto.php"><i class="fas fa-envelope"></i>Contactar</a>
+        <a class="nav-link" href="formularioContacto.php"><i class="fas fa-envelope"></i>Contactar</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="login con sesiones/feedbackForm.php"><i class="fas fa-star"></i>Give feedback</a>
+        <a class="nav-link" href="feedbackForm.php"><i class="fas fa-star"></i>Give feedback</a>
     </li>
     <li class="nav-item">
         <button  onclick="sendEmailDefault()"><i class="fas fa-plane-departure"></i>Enviar email</button>
     </li>
     <li class="nav-item">
-     <a class="nav-link" href="phpMail040322/enviarEmail.php"><i class="fas fa-envelope"></i>Enviar Sugerencias </a>
- </li>
+       <a class="nav-link" href="../phpMail040322/enviarEmail.php"><i class="fas fa-envelope"></i>Enviar Sugerencias </a>
+   </li>
 </ul>
 </div>
 </div>
@@ -617,15 +620,15 @@ data-background-color="f5f5f5"
     </p>
 </div>
 
-<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/slideShow.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/horaSimple.js"></script>
+<script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="../js/main.js"></script>
+<script type="text/javascript" src="../js/slideShow.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+<script type="text/javascript" src="../js/horaSimple.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.5.4/bootstrap-select.js"></script>
-<script type="text/javascript" src="js/enviarEmail.js"></script>
+<script type="text/javascript" src="../js/enviarEmail.js"></script>
 <script>
     /* ésto comprueba la localStorage si ya tiene la variable guardada */
     function compruebaAceptaCookies() {

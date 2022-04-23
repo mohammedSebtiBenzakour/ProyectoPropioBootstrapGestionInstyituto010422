@@ -54,9 +54,9 @@
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
-					<li class="breadcrumb-item"><a href="../indexNuevo.html">Administración</a></li>
-					<li class="breadcrumb-item"><a href="loginProfesores.php">Login para Profesores</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Administración</a></li>
+					<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login para Profesores</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Formulario para crear usuarios 'Profesores'</li>
 				</ol>
 			</nav>
@@ -188,7 +188,7 @@
 					<input type="submit" class="btn btn-success btn-send" value="Registrarse">
 				</div>
 				<div class="col-md-4">
-					<a class="btn btn-primary" href="loginProfesores.php" role="button">Salir</a>
+					<a class="btn btn-primary" href="loginPorPerfiles.php" role="button">Salir</a>
 				</div>
 
 			</div>

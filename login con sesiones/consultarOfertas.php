@@ -56,8 +56,8 @@ require_once('consultasOfertas.php');
 		<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Introducir Ofertas de trabajo</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Introducir Ofertas de trabajo</a></li>
 						<li class="breadcrumb-item"><a href="formularioInsertarOferta.php">Formulario para registrar Ofertas</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Consultar listado de Ofertas de trabajo</li>
 					</ol>
@@ -104,7 +104,7 @@ require_once('consultasOfertas.php');
 				<a class="btn btn-primary" href="formularioInsertarOferta.php" role="button">Volver a formulario de registro</a>
 			</div>
 			<div class="col-6">
-				<a class="btn btn-primary" href="formularioInsertarOferta.php" role="button">Salir</a>
+				<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 			</div>
 		</div>
 	</div>

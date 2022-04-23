@@ -11,7 +11,7 @@ function loginForm() {
 				<input type="submit" class="btn btn-default" name="enter" id="enter" value="Enter" />
 			</form>
 		</div>
-		<a class="btn btn-warning" href="../indexNuevo.php" role="button">Volver</a>
+		<a class="btn btn-warning" href="../login con sesiones/indexNuevo.php" role="button">Volver</a>
 	</div>
    ';
 }

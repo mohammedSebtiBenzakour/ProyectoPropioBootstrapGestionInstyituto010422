@@ -43,15 +43,15 @@ $array = mysqli_fetch_array($query);
             <div class="col">
             </div>
             <div class="col">
-             <div id='rssBlock'>
-               <p class="cnnContents">
-                   <span class="marqueeStyle">&nbsp;Bienvenido al instituto</span>
-                   <!-- duplicate above, change style to allow continous scroll -->
-               </p>
-           </div>
-       </div>
-       <div class="col pt-2 mb-2 d-flex flex-row-reverse colores col-lg-2">
-           <div class="dropdown">
+               <div id='rssBlock'>
+                 <p class="cnnContents">
+                     <span class="marqueeStyle">&nbsp;Bienvenido al instituto</span>
+                     <!-- duplicate above, change style to allow continous scroll -->
+                 </p>
+             </div>
+         </div>
+         <div class="col pt-2 mb-2 d-flex flex-row-reverse colores col-lg-2">
+             <div class="dropdown">
               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 Idiomas
             </button>
@@ -70,55 +70,52 @@ $array = mysqli_fetch_array($query);
 <nav class="container">
     <div class="row">
         <div class="col ">
-         <div class='time' id='time'></div>
-     </div>
- </div>
- <div class="row">
+           <div class='time' id='time'></div>
+       </div>
+   </div>
+   <div class="row">
     <div class="col ">
-       <nav class="navbar navbar-expand-lg navbar-light  bg-light ">
-          <div class="container-fluid">
-              <a class="navbar-brand" href="loginPorPerfiles.php">Login</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                  <ul class="navbar-nav">
-                    
-               
-            <li class="nav-item dropdown ">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Juegos Educativos
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
-                <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
-                <li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
-                <li><a class="dropdown-item" href="../ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
-            </ul>
-        </li>
-        <li class="nav-item dropdown disabled" hidden>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Varios
-        </a>
-        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
-            <li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
-            <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
-            <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
-            <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
-            <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
-            <li><a class="dropdown-item" href="#">Calculadora</a></li>
-        </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="calendario.html">Calendario</a>
-  </li>
-</ul>
-</div>
+     <nav class="navbar navbar-expand-lg navbar-light  bg-light ">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="loginPorPerfiles.php">Login</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                
+                 
+                <li class="nav-item dropdown ">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Juegos Educativos
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
+                    <li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
+                    <li><a class="dropdown-item" href="../ElAhorcadoMohammedSebtiBenzakour11122021/index1.php">El ahorcado PHP</a></li>
+                    <li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+                    <li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
+                    <li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
+                    <li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
+                    <li><a class="dropdown-item" href="#">La sopa de letras</a></li>
+                    <li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
+                    <li><a class="dropdown-item" href="#">Calculadora</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="apuntarTareas.html">Apuntar tareas</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="calendario.html">Calendario</a>
+          </li>
+      </ul>
+  </div>
 </div>
 </nav>
 </div>
@@ -199,65 +196,65 @@ $array = mysqli_fetch_array($query);
 
 
           <section class="cc-carousel">
-           <div class="cc-carousel-container" data-carousel-position="1" data-animation-duration="2000" data-animation-position="0" data-animation-easing="linear">
-            <div
-            class="cc-card"
-            data-card-position="1"
-            data-image-src="../imagenesInstituto/mascarilla.png"
-            data-image-size="cover"
-            data-background-position="center center"
-            data-background-color="f5f5f5"
-            >
-            <div class="cc-card-top">
-              <div class="cc-card-top-overlay"></div>
-              <h3>COVID</h3>
-          </div>
-          <div class="cc-card-bottom">
-              <h4>Med. COVID</h4>
-              <p class="card-details">
-               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-           </p>
-           <a href="javascript:void(0);" class="button-cta"></a>
-       </div>
-   </div>
-   <div
-   class="cc-card"
-   data-card-position="2"
-   data-image-src="../imagenesInstituto/formulario.png"
-   data-image-size="cover"
-   data-background-position="center center"
-   data-background-color="f5f5f5"
-   >
-   <div class="cc-card-top">
-      <div class="cc-card-top-overlay"></div>
-      <h3>Ausencias</h3>
-  </div>
-  <div class="cc-card-bottom">
-      <h4>F. Ausencias</h4>
-      <p class="card-details">
-       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-   </p>
-   <a href="javascript:void(0);" class="button-cta"></a>
-</div>
-</div>
-<div
-class="cc-card"
-data-card-position="3"
-data-image-src="../imagenesInstituto/actividades.png"
-data-image-size="cover"
-data-background-position="center center"
-data-background-color="f5f5f5"
->
-<div class="cc-card-top">
+             <div class="cc-carousel-container" data-carousel-position="1" data-animation-duration="2000" data-animation-position="0" data-animation-easing="linear">
+                <div
+                class="cc-card"
+                data-card-position="1"
+                data-image-src="../imagenesInstituto/mascarilla.png"
+                data-image-size="cover"
+                data-background-position="center center"
+                data-background-color="f5f5f5"
+                >
+                <div class="cc-card-top">
+                  <div class="cc-card-top-overlay"></div>
+                  <h3>COVID</h3>
+              </div>
+              <div class="cc-card-bottom">
+                  <h4>Med. COVID</h4>
+                  <p class="card-details">
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+                 </p>
+                 <a href="javascript:void(0);" class="button-cta"></a>
+             </div>
+         </div>
+         <div
+         class="cc-card"
+         data-card-position="2"
+         data-image-src="../imagenesInstituto/formulario.png"
+         data-image-size="cover"
+         data-background-position="center center"
+         data-background-color="f5f5f5"
+         >
+         <div class="cc-card-top">
+          <div class="cc-card-top-overlay"></div>
+          <h3>Ausencias</h3>
+      </div>
+      <div class="cc-card-bottom">
+          <h4>F. Ausencias</h4>
+          <p class="card-details">
+             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+         </p>
+         <a href="javascript:void(0);" class="button-cta"></a>
+     </div>
+ </div>
+ <div
+ class="cc-card"
+ data-card-position="3"
+ data-image-src="../imagenesInstituto/actividades.png"
+ data-image-size="cover"
+ data-background-position="center center"
+ data-background-color="f5f5f5"
+ >
+ <div class="cc-card-top">
   <div class="cc-card-top-overlay"></div>
   <h3>Actividades</h3>
 </div>
 <div class="cc-card-bottom">
   <h4>Actividades</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
@@ -276,9 +273,9 @@ data-background-color="f5f5f5"
   <div class="cc-card-top-overlay"></div>
   <h4>Consultas</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
@@ -296,9 +293,9 @@ data-background-color="f5f5f5"
 <div class="cc-card-bottom">
   <h4>Transporte</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 <div
@@ -316,9 +313,9 @@ data-background-color="f5f5f5"
 <div class="cc-card-bottom">
   <h4>Incidencias</h4>
   <p class="card-details">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
-</p>
-<a href="javascript:void(0);" class="button-cta"></a>
+     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quia quas nihil provident atque perspiciatis ipsum esse blanditiis cupiditate vero?
+ </p>
+ <a href="javascript:void(0);" class="button-cta"></a>
 </div>
 </div>
 </div>
@@ -342,9 +339,9 @@ data-background-color="f5f5f5"
                 <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-html5">Cursos de Lenguaje HTML5</a></button>
                 <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-javascript">Cursos sobre Lenguaje JavaScript</a></button>
                 <button class="btn btn-outline-primary"  type="button"><a href="https://www.edx.org/es/aprende/lenguaje-css">Cursos sobre lenguaje CSS</a></button>
-                 <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/programacion-en-java">Cursos de programación en Java</a></button>
-                  <button class="btn btn-outline-primary" type="button"><a href="https://www.classcentral.com/subject/php">Free OnlinePHP Courses</a></button>
-                   <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/desarrollo-de-aplicaciones">Cursos de Desarrollo de Aplicaciones</a></button>
+                <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/programacion-en-java">Cursos de programación en Java</a></button>
+                <button class="btn btn-outline-primary" type="button"><a href="https://www.classcentral.com/subject/php">Free OnlinePHP Courses</a></button>
+                <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/desarrollo-de-aplicaciones">Cursos de Desarrollo de Aplicaciones</a></button>
 
                 <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/sql">Cursos sobre SQL</a></button>
                 <button class="btn btn-outline-primary" type="button"><a href="https://www.edx.org/es/aprende/my-sql">Cursos de MySQL</a></button>
@@ -506,8 +503,8 @@ data-background-color="f5f5f5"
         <button  onclick="sendEmailDefault()"><i class="fas fa-plane-departure"></i>Enviar email</button>
     </li>
     <li class="nav-item">
-     <a class="nav-link" href="../phpMail040322/enviarEmail.php"><i class="fas fa-envelope"></i>Enviar Sugerencias </a>
- </li>
+       <a class="nav-link" href="../phpMail040322/enviarEmail.php"><i class="fas fa-envelope"></i>Enviar Sugerencias </a>
+   </li>
 </ul>
 </div>
 </div>

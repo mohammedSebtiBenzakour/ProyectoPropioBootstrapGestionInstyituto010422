@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import central.ClaseParaValidarDatos;
 import dao.Nivel_institutoJpaController;
 import entidades.Nivel_instituto;
 import java.io.IOException;
@@ -49,28 +50,34 @@ public class InsertarNivel extends HttpServlet {
         HttpSession sesion = request.getSession();
 
         String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        
+
         Nivel_institutoJpaController njc = new Nivel_institutoJpaController(emf);
-        
+
         Nivel_instituto ni = new Nivel_instituto();
-        
+
         String nivel = request.getParameter("nivel");
-        
-        ni.setNombre_nivel(nivel);
-        ni.setCreado_el(timeStamp);
-        
-        try {
-            njc.create(ni);
-        } catch (Exception ex) {
-             if (ex.getMessage().contains("Duplicate entry")) {
-                error = "Ya existe el nivel " + ni.getNombre_nivel();
-            } else {
-                error = "Error al insertar el nivel (" + ex.getMessage() + ")";
-                System.out.println("el error es " + error);
-                System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+
+        if (ClaseParaValidarDatos.validarDatos(nivel) == true) {
+
+            ni.setNombre_nivel(nivel);
+            ni.setCreado_el(timeStamp);
+
+            try {
+                njc.create(ni);
+            } catch (Exception ex) {
+                if (ex.getMessage().contains("Duplicate entry")) {
+                    error = "Ya existe el nivel " + ni.getNombre_nivel();
+                } else {
+                    error = "Error al insertar el nivel (" + ex.getMessage() + ")";
+                    System.out.println("el error es " + error);
+                    System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                }
             }
+        } else {
+             error = "El nivel no es correcto";
         }
-              //Si no hay ningun error se dirige a una pagina o a otra   
+
+        //Si no hay ningun error se dirige a una pagina o a otra   
         if (error == null) {
             mensaje = URLEncoder.encode("Se ha creado el nivel " + ni.getNombre_nivel(), "latin1");
             response.sendRedirect(response.encodeRedirectURL("gestionNiveles.jsp?mensaje=" + mensaje));
@@ -78,8 +85,11 @@ public class InsertarNivel extends HttpServlet {
             return;
         } else {
 
-            request.setAttribute("error", error);
-            getServletContext().getRequestDispatcher("/admin/insertarNivel.jsp").forward(request, response);
+//            request.setAttribute("error", error);
+//            getServletContext().getRequestDispatcher("/admin/insertarNivel.jsp").forward(request, response);
+            
+            mensaje = URLEncoder.encode("Error en el nivel ", "latin1");
+            response.sendRedirect(response.encodeRedirectURL("insertarNivel.jsp?mensaje=" + mensaje));
         }
 
     }

@@ -180,7 +180,7 @@ $arrayP = mysqli_fetch_array($queryP);
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login General</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Pagina Principal</li>
 				</ol>
@@ -197,10 +197,13 @@ $arrayP = mysqli_fetch_array($queryP);
 			</div>
 		</div>
 		<div class="row pb-3">
-			<div class="col-md-6 mt-3">
-				<a class="btn btn-primary" href="../indexNuevo.php" role="button">Volver</a>
+			<div class="col-md-3 mt-3">
+				<a class="btn btn-primary" href="indexNuevo.php" role="button">Volver</a>
 			</div>
-			<div class="col-md-6 mt-3 ">
+			<div class="col-md-5 mt-3 ">
+				<a class="btn btn-success" href="../phpMail040322/enviarEmail.php" role="button">Enviar cualquier documento por email</a>
+			</div>
+			<div class="col-md-4 mt-3 ">
 				<a class="btn btn-primary" href="subidaDocumentosServido.php" role="button">Subir cualquier documento al servidor</a>
 			</div>
 		</div>
@@ -266,7 +269,7 @@ $arrayP = mysqli_fetch_array($queryP);
 											</div>
 
 											<div class="col-4">
-												<a class="btn btn-primary" href="../indexNuevo.php" role="button">Salir</a>
+												<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 											</div>
 										</div>
 									</div>
@@ -319,7 +322,7 @@ $arrayP = mysqli_fetch_array($queryP);
 											</div>
 
 											<div class="col-4">
-												<a class="btn btn-primary" href="../indexNuevo.php" role="button">Salir</a>
+												<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 											</div>
 										</div>
 									</div>
@@ -372,7 +375,7 @@ $arrayP = mysqli_fetch_array($queryP);
 											</div>
 
 											<div class="col-4">
-												<a class="btn btn-primary" href="../indexNuevo.php" role="button">Salir</a>
+												<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 											</div>
 										</div>
 									</div>

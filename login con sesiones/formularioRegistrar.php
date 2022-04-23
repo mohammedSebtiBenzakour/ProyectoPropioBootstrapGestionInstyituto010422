@@ -97,7 +97,7 @@ if (!isset($usuario) || !isset($perfil)) {
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="paginaMenuAside.php">Administración</a></li>
 					<li class="breadcrumb-item"><a href="loginProfesores.php">Login para Profesores</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Formulario para crear 'Profesores'</li>
@@ -262,7 +262,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<input type="submit" class="btn btn-success btn-send" value="Registrarse" id="registrar" name="registrar">
 				</div>
 				<div class="col-md-4">
-					<a class="btn btn-primary" href="loginProfesores.php" role="button">Salir</a>
+					<a class="btn btn-primary" href="loginPorPerfiles.php" role="button">Salir</a>
 				</div>
 
 			</div>

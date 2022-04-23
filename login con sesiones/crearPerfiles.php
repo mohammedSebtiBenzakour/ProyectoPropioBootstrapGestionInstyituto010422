@@ -5,7 +5,7 @@ session_start();
 $usuario = $_SESSION['usuario'] ;
 $perfil = $_SESSION['perfil'] ;
 if (!isset($usuario) || !isset($perfil)) {
-	header("location: loginProfesores.php");
+	header("location: loginPorPerfiles.php");
 }else{
 
 // 	echo "<h1>Bienvenido : $usuario </h1>";
@@ -81,7 +81,7 @@ if (!isset($usuario) || !isset($perfil)) {
 			<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Crear o añadir perfiles</li>
 					</ol>
@@ -128,7 +128,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<a class="btn btn-outline-success" href="formularioRegistrar.php" role="button">Si no estas registrado Pulsa aquí</a>
 				</div>
 				<div class="col">
-					<a class="btn btn-outline-warning" href="../indexNuevo.html" role="button">Volver</a>
+					<a class="btn btn-outline-warning" href="indexNuevo.php" role="button">Volver</a>
 				</div>
 			</div>
 		</div>

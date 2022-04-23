@@ -89,7 +89,7 @@
 			</div>
 			
 			<div class="form-group mt-4 mb-4 d-flex justify-content-center">
-				<a href="../indexNuevo.php"   class="theme-btn dark-btn hvr-bounce-to-right btn btn-warning me-5 " name="volver">
+				<a href="../login con sesiones/indexNuevo.php"   class="theme-btn dark-btn hvr-bounce-to-right btn btn-warning me-5 " name="volver">
 					<span class="fa fa-arrow-left"></span> Volver </a>
 					<button type="submit"  class="theme-btn dark-btn hvr-bounce-to-right btn btn-primary " name="enviar">
 						<span class="fa fa-envelope"></span> Enviar email </button>

@@ -5,7 +5,7 @@ session_start();
 $usuario = $_SESSION['usuario'] ;
 $perfil = $_SESSION['perfil'] ;
 if (!isset($usuario) || !isset($perfil)) {
-	header("location: loginProfesores.php");
+	header("location: loginPorPerfiles.php");
 }else{
 
 // 	echo "<h1>Bienvenido : $usuario </h1>";
@@ -75,7 +75,7 @@ if (!isset($usuario) || !isset($perfil)) {
 			<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login General</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Pagina Principal</li>
 					</ol>
@@ -97,7 +97,7 @@ if (!isset($usuario) || !isset($perfil)) {
 					<a class="btn btn-primary" href="consultarListadoPersonalNoDocente.php" role="button">Consultar Listado Personal no Docente</a>
 				</div>
 				<div class="col-md-12 mt-3">
-					<a class="btn btn-primary" href="../indexNuevo.html" role="button">Volver</a>
+					<a class="btn btn-primary" href="indexNuevo.php" role="button">Volver</a>
 				</div>
 			</div>
 

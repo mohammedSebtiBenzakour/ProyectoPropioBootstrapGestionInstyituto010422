@@ -78,8 +78,8 @@
 			<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Administración</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Administración</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Elección de perfiles</li>
 					</ol>
 				</nav>
@@ -130,7 +130,7 @@
 					<a class="btn btn-outline-success" href="crearPerfiles.php" role="button">Si no tienes perfil Pulsa aquí</a>
 				</div>
 				<div class="col">
-					<a class="btn btn-outline-warning" href="../indexNuevo.html" role="button">Volver</a>
+					<a class="btn btn-outline-warning" href="indexNuevo.php" role="button">Volver</a>
 				</div>
 			</div>
 		</div>

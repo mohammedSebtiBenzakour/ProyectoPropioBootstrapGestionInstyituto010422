@@ -208,6 +208,10 @@
         <servlet-name>GraficaNotas</servlet-name>
         <servlet-class>controlador.GraficaNotas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EnviarEmailGeneral</servlet-name>
+        <servlet-class>controlador.EnviarEmailGeneral</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CrearNivel</servlet-name>
         <url-pattern>/CrearNivel</url-pattern>
@@ -407,6 +411,10 @@
     <servlet-mapping>
         <servlet-name>GraficaNotas</servlet-name>
         <url-pattern>/admin/GraficaNotas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnviarEmailGeneral</servlet-name>
+        <url-pattern>/admin/EnviarEmailGeneral</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

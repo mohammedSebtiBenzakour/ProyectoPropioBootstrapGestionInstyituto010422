@@ -56,9 +56,9 @@ require_once('consultas.php');
 		<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item"><a href="loginPorPerfiles.php">Login General</a></li>
-						<li class="breadcrumb-item"><a href="paginaPrincipal.php">Pagina Principal</a></li>
+						<li class="breadcrumb-item"><a href="paginaMenuAside.php">Pagina Principal</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Consultar listado de Profesores Registrados</li>
 					</ol>
 				</nav>
@@ -104,10 +104,10 @@ require_once('consultas.php');
 				<a class="btn btn-primary" href="formularioRegistrar.php" role="button">Volver a formulario de registro</a>
 			</div>
 			<div class="col-4">
-				<a class="btn btn-primary" href="paginaPrincipal.php" role="button">Volver a pagina principal</a>
+				<a class="btn btn-primary" href="paginaMenuAside.php" role="button">Volver a pagina principal</a>
 			</div>
 			<div class="col-4">
-				<a class="btn btn-primary" href="../indexNuevo.html" role="button">Salir</a>
+				<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 			</div>
 		</div>
 	</div>

@@ -88,7 +88,7 @@ if (!isset($usuario) || !isset($perfil)) {
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="aviso_legal.php">Aviso Legal</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Pagina Principal</li>
 				</ol>
@@ -197,7 +197,7 @@ if (!isset($usuario) || !isset($perfil)) {
 				<a class="btn btn-outline-success" href="aviso_legal.pdf" role="button">Ver Avisos Legales</a>
 			</div>
 			<div class="col">
-				<a class="btn btn-outline-warning" href="../indexNuevo.php" role="button">Volver</a>
+				<a class="btn btn-outline-warning" href="indexNuevo.php" role="button">Volver</a>
 			</div>
 		</div>
 		

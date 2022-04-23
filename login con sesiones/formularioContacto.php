@@ -13,7 +13,7 @@
 			<div class="col">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="indexNuevo.html">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item"><a href="#">Formulario de contacto</a></li>
 					</ol>
 				</nav>
@@ -46,7 +46,7 @@
 					<textarea rows="6" placeholder="Vuestro Mensage" id="message" name="message" required></textarea>
 					<!--<a href="javascript:void(0)">-->
 					<input type="submit" id="submit" name="enviar" value="Enviar" class="btn btn-primary btn-lg  "><!--</a>-->
-					<a href="../indexNuevo.php" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true">Volver</a>
+					<a href="indexNuevo.php" class="btn btn-success btn-lg" tabindex="-1" role="button" aria-disabled="true">Volver</a>
 
 				</form>
 				<div id="error"></div>

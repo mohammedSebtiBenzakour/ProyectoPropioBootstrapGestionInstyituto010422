@@ -70,9 +70,9 @@ $arrayNiv = mysqli_fetch_array($queryNiv);
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.html">Home</a></li>
-					<li class="breadcrumb-item"><a href="../indexNuevo.html">Administración</a></li>
-					<li class="breadcrumb-item"><a href="paginaPrincipal.php">Pagina Principal</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Administración</a></li>
+					<li class="breadcrumb-item"><a href="paginaMenuAside.php">Pagina Principal</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Consultar listado de Personal No Docente</li>
 				</ol>
 			</nav>
@@ -150,11 +150,11 @@ $arrayNiv = mysqli_fetch_array($queryNiv);
 <div class="container d-flex justify-content-center mb-3">
 		<div class="row">
 			<div class="col-10">
-				<a class="btn btn-primary" href="paginaPrincipal.php" role="button">Volver a la pagina principal</a>
+				<a class="btn btn-primary" href="paginaMenuAside.php" role="button">Volver a la pagina principal</a>
 			</div>
 			
 			<div class="col-2">
-				<a class="btn btn-primary" href="EjercicioClaseBootstrap.php" role="button">Salir</a>
+				<a class="btn btn-primary" href="indexNuevo.php" role="button">Salir</a>
 			</div>
 			
 		</div>

@@ -150,5 +150,41 @@ function validarCodigoPostal($nombre){
 	return false;
 }
 
+function validarDescripcion($nombre){
+
+
+	if(preg_match ( "/^[A-Za-zÑñ',.\s-]{3,600}$/" , $nombre )) {
+		echo "ok";
+		return true;
+	} else {
+		echo "no vale";
+		return false;
+	}
+	return false;
+}
+
+function validarNombreNoticia($nombre){
+
+	if(preg_match ( "/^([A-Za-zÑñ]+[áéíóú]?[A-Za-z]*){3,55}$/" , $nombre )) {
+		echo "ok";
+		return true;
+	} else {
+		echo "no vale";
+		return false;
+	}
+	return false;
+}
+
+function validarTextoNoticia($nombre){
+
+	if(preg_match ( "/^[a-zA-Z0-9 àâäèéêëîïôœùûüÿçÀÂÄÈÉÊËÎÏÔŒÙÛÜŸÇ[:punct:]]{3,600}$/" , $nombre )) {
+		echo "ok";
+		return true;
+	} else {
+		echo "no vale";
+		return false;
+	}
+	return false;
+}
 
  ?>

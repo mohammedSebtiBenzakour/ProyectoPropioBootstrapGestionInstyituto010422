@@ -118,7 +118,7 @@ $arrayN = mysqli_fetch_array($queryN);
 		<div class="row">
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+					<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 					<li class="breadcrumb-item"><a href="paginaMenuAside.php">Administración</a></li>
 					<li class="breadcrumb-item"><a href="consultarListadosEmpleados.php">Empleados</a></li>
 					<li class="breadcrumb-item active" aria-current="page">Consultar Empleados</li>

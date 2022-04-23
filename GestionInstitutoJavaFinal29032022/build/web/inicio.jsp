@@ -97,6 +97,12 @@
                     <h2><a href="admin/gestionMatriculas.jsp" class="esconderMenu">Gestionar Matriculas</a></h2>
                 </div>
             </div>
+                 <div class="imagen">
+                <img src="imagenes/1 (4).jpg" alt="">
+                <div class="overlay">
+                    <h2><a href="admin/enviarEmail.jsp" class="esconderMenu">Enviar email con imagenes o documentos</a></h2>
+                </div>
+            </div>
             <div class="imagen ">
                 <img src="imagenes/imagenVolver.jpg" alt="">
                 <div class="overlay">

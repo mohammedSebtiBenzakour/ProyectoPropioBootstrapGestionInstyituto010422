@@ -19,7 +19,7 @@
 	$usuario = $_SESSION['usuario'] ;
 	$perfil = $_SESSION['perfil'] ;
 	if (!isset($usuario) || !isset($perfil)) {
-		header("location: loginProfesores.php");
+		header("location: loginPorPerfiles.php");
 	}else{
 
 // 	echo "<h1>Bienvenido : $usuario </h1>";
@@ -72,7 +72,7 @@
 			<div class="row">
 				<nav aria-label="breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="../indexNuevo.php">Home</a></li>
+						<li class="breadcrumb-item"><a href="indexNuevo.php">Home</a></li>
 						<li class="breadcrumb-item"><a href="paginaMenuAside.php">Inserción de datos</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Crear o añadir nivel educativo</li>
 					</ol>
