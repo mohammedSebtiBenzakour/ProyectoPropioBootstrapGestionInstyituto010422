@@ -5,6 +5,7 @@
  */
 package controlador;
 
+import central.ClaseParaValidarDatos;
 import dao.MatriculaJpaController;
 import entidades.Materia;
 import entidades.Matricula;
@@ -59,28 +60,36 @@ public class InsertarMatricula extends HttpServlet {
         String descripcion = request.getParameter("descripcion");
         String dni_alumno = request.getParameter("dni_alumno");
         String materia = request.getParameter("materia");
-
         Matricula matri = new Matricula();
+        
+        if (ClaseParaValidarDatos.validarSoloTexto(nombre_matricula) == true) {
+            if (ClaseParaValidarDatos.validarSoloTexto(descripcion) == true) {
 
-        ra.setDni_alumno(dni_alumno);
-        mat.setMateria(materia);
-        
-        matri.setAlumno(ra);
-        matri.setCreado_el(timeStamp);
-        matri.setDescripcion(descripcion);
-        matri.setNombre_matricula(nombre_matricula);
-        matri.setNombre_materia(mat);
-        
-         try {
-           majc.create(matri);
-        } catch (Exception ex) {
-            if (ex.getMessage().contains("Duplicate entry")) {
-                error = "Ya existe la matricula " + matri.getNombre_matricula();
+                ra.setDni_alumno(dni_alumno);
+                mat.setMateria(materia);
+
+                matri.setAlumno(ra);
+                matri.setCreado_el(timeStamp);
+                matri.setDescripcion(descripcion);
+                matri.setNombre_matricula(nombre_matricula);
+                matri.setNombre_materia(mat);
+
+                try {
+                    majc.create(matri);
+                } catch (Exception ex) {
+                    if (ex.getMessage().contains("Duplicate entry")) {
+                        error = "Ya existe la matricula " + matri.getNombre_matricula();
+                    } else {
+                        error = "Error al insertar la matricula (" + ex.getMessage() + ")";
+                        System.out.println("el error es " + error);
+                        System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                    }
+                }
             } else {
-                error = "Error al insertar la matricula (" + ex.getMessage() + ")";
-                System.out.println("el error es " + error);
-                System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                error = "La descripcion no es correcta";
             }
+        } else {
+            error = "El nombre de la matricula no es correcto";
         }
         //Si no hay ningun error se dirige a una pagina o a otra   
         if (error == null) {
@@ -90,10 +99,14 @@ public class InsertarMatricula extends HttpServlet {
             return;
         } else {
 
-            request.setAttribute("error", error);
-            getServletContext().getRequestDispatcher("/admin/insertarMatricula.jsp").forward(request, response);
+//            request.setAttribute("error", error);
+//            getServletContext().getRequestDispatcher("/admin/insertarMatricula.jsp").forward(request, response);
+
+            mensaje = URLEncoder.encode("Error en la matricula o descripcion ", "latin1");
+            response.sendRedirect(response.encodeRedirectURL("insertarMatricula.jsp?mensaje=" + mensaje));
+
+            return;
         }
-        
 
     }
 

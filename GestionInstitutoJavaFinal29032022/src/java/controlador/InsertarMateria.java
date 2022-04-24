@@ -66,7 +66,7 @@ public class InsertarMateria extends HttpServlet {
         Materia mat = new Materia();
 
         if (ClaseParaValidarDatos.validarDatos(materia) == true) {
-            if (ClaseParaValidarDatos.validarDatos(descripcion) == true) {
+            if (ClaseParaValidarDatos.validarSoloTexto(descripcion) == true) {
 
                 ru.setDni(profesor);
                 mat.setMateria(materia);

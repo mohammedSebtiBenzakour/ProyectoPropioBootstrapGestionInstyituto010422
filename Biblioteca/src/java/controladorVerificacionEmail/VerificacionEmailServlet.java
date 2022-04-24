@@ -5,6 +5,7 @@
  */
 package controladorVerificacionEmail;
 
+import controladorEditarLibro.ClaseParaValidarDatos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
@@ -37,6 +38,7 @@ public class VerificacionEmailServlet extends HttpServlet {
         request.setCharacterEncoding("latin1");
         String mensaje = null;
         String error = null;
+        int contador = 0;
 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -44,19 +46,41 @@ public class VerificacionEmailServlet extends HttpServlet {
             String nombreUsuario = request.getParameter("nombreUsuario");
             String emailUsuario = request.getParameter("emailUsuario");
 
-            EnviarEmail em = new EnviarEmail();
-            String codigoVerif = em.getRandom();
-
-            Usuario usuario = new Usuario(nombreUsuario, emailUsuario, codigoVerif);
-
-            boolean test = em.sendEmail(usuario);
-
-            if (test) {
-                HttpSession ses = request.getSession();
-                ses.setAttribute("usuario", usuario);
-//                response.sendRedirect("verificacionEmailRespuesta.jsp");
+            if (ClaseParaValidarDatos.validarSoloTexto(nombreUsuario) == true) {
+                contador++;
+                System.out.println("el contador1  " + contador);
             } else {
-                error = "Error en la verificación del email ";
+                error = "El nombre no es correcto";
+            }
+            if (ClaseParaValidarDatos.validarEmail(emailUsuario) == true) {
+                contador++;
+                System.out.println("el contador2  " + contador);
+
+            } else {
+                error = "El email no es correcto";
+            }
+
+            if (contador == 2) {
+
+                EnviarEmail em = new EnviarEmail();
+                String codigoVerif = em.getRandom();
+
+                Usuario usuario = new Usuario(nombreUsuario, emailUsuario, codigoVerif);
+
+                boolean test = em.sendEmail(usuario);
+
+                if (test) {
+                    HttpSession ses = request.getSession();
+                    ses.setAttribute("usuario", usuario);
+//                response.sendRedirect("verificacionEmailRespuesta.jsp");
+                } else {
+                    error = "Error en la verificación del email ";
+                }
+            } else {
+                mensaje = URLEncoder.encode("Error en el nombre o el email ", "latin1");
+                response.sendRedirect(response.encodeRedirectURL("verificacionEmail.jsp?mensaje=" + mensaje));
+
+                return;
             }
 
             if (error == null) {

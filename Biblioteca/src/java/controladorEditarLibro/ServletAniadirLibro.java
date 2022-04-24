@@ -8,6 +8,7 @@ package controladorEditarLibro;
 import controlador.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +35,7 @@ public class ServletAniadirLibro extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=latin1");
         request.setCharacterEncoding("latin1");
-
+        String mensaje = "";
         String error = "";
         String bname = request.getParameter("nombreLibro");
         String bdesc = request.getParameter("descripcionLibro");
@@ -42,23 +43,45 @@ public class ServletAniadirLibro extends HttpServlet {
         String cat = request.getParameter("categoriaLibro");
         Categoria cate = new Categoria();
         Libros book = null;
-        cate.setCategoriaLibro(cat);
-        cate.getCategoriaLibro();
-        book = new Libros(bname, bdesc, athname, cate);
+        int contador = 0;
 
-        try {
-            LibrosDao bkdao = new LibrosDao(Conexion.conectarBD());
-            if (bkdao.añadirLibro(book)) {
-                response.sendRedirect("editarLibroIndex.jsp");
-            } else {
-                error = "Algun problema en añadir el libro";
-//                out.print("wrong cre3dential");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (ClaseParaValidarDatos.validarSoloTexto(bname) == true) {
+            contador++;
+        } else {
+            error = "El nombre del libro no es correcto";
         }
+        if (ClaseParaValidarDatos.validarSoloTexto(bdesc) == true) {
+            contador++;
+        } else {
+            error = "La descripcion del libro no es correcta";
+        }
+        if (ClaseParaValidarDatos.validarSoloTexto(athname) == true) {
+            contador++;
+        } else {
+            error = "El autor del libro no es correcto";
+        }
+        if (contador == 3) {
 
+            cate.setCategoriaLibro(cat);
+            cate.getCategoriaLibro();
+            book = new Libros(bname, bdesc, athname, cate);
+
+            try {
+                LibrosDao bkdao = new LibrosDao(Conexion.conectarBD());
+                if (bkdao.añadirLibro(book)) {
+                    response.sendRedirect("editarLibroIndex.jsp");
+                } else {
+                    error = "Algun problema en añadir el libro";
+//                out.print("wrong cre3dential");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            mensaje = URLEncoder.encode("Error en el nombre del libro, la descripcion o el autor ", "latin1");
+            response.sendRedirect(response.encodeRedirectURL("editarLibroIndex.jsp?mensaje=" + mensaje));
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

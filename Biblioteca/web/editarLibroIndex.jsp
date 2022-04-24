@@ -170,7 +170,9 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
+        <footer class="container mb-5 d-flex justify-content-center align-items-center btn btn-warning shadow rounded text-uppercase botonInicio">
+            <h2><a href="welcomeBienvenido.jsp" class="botonInicio">Volver</a></h2>
+        </footer>
         
 
         <!-- Optional JavaScript -->

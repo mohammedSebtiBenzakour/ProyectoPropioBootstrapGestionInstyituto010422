@@ -78,8 +78,8 @@
         <div class="container navbar-light bg-light">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422/indexNuevo.php">Administración</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422">Home</a></li>
+                    <li class="breadcrumb-item"><a href="http://localhost/ProyectoPropioBootstrapGestionInstyituto010422">Administración</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Acceder a la Biblioteca</li>
                 </ol>
             </nav>

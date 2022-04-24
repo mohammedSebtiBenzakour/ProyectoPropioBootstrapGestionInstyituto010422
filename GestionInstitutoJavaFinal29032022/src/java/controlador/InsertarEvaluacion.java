@@ -2,9 +2,11 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+https://www.freeformatter.com/java-regex-tester.html#ad-output
  */
 package controlador;
 
+import central.ClaseParaValidarDatos;
 import dao.EvaluacionJpaController;
 import entidades.Evaluacion;
 import entidades.Registrar_alumnos;
@@ -65,23 +67,32 @@ public class InsertarEvaluacion extends HttpServlet {
         String observacion = request.getParameter("observacion");
         String dni_alumno = request.getParameter("dni_alumno");
 
-        ra.setDni_alumno(dni_alumno);
+        if (ClaseParaValidarDatos.validarSoloNumerosDecimales(nota) == true) {
+            if (ClaseParaValidarDatos.validarSoloTexto(observacion) == true) {
 
-        eva.setAlumno(ra);
-        eva.setFecha_registro(timeStamp);
-        eva.setNota(nota);
-        eva.setObservacion(observacion);
+                ra.setDni_alumno(dni_alumno);
 
-        try {
-            evjc.create(eva);
-        } catch (Exception ex) {
-            if (ex.getMessage().contains("Duplicate entry")) {
-                error = "Ya existe la evaluacion : " + eva.getId() + " para el alumno : " + eva.getAlumno().getDni_alumno();
+                eva.setAlumno(ra);
+                eva.setFecha_registro(timeStamp);
+                eva.setNota(nota);
+                eva.setObservacion(observacion);
+
+                try {
+                    evjc.create(eva);
+                } catch (Exception ex) {
+                    if (ex.getMessage().contains("Duplicate entry")) {
+                        error = "Ya existe la evaluacion : " + eva.getId() + " para el alumno : " + eva.getAlumno().getDni_alumno();
+                    } else {
+                        error = "Error al insertar la evaluacion (" + ex.getMessage() + ")";
+                        System.out.println("el error es " + error);
+                        System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                    }
+                }
             } else {
-                error = "Error al insertar la evaluacion (" + ex.getMessage() + ")";
-                System.out.println("el error es " + error);
-                System.err.println(ex.getClass().getName() + " : " + ex.getMessage());
+                error = "La observacion no es correcta";
             }
+        } else {
+            error = "La nota no es correcta";
         }
 
         //Si no hay ningun error se dirige a una pagina o a otra   
@@ -92,8 +103,12 @@ public class InsertarEvaluacion extends HttpServlet {
             return;
         } else {
 
-            request.setAttribute("error", error);
-            getServletContext().getRequestDispatcher("/admin/insertarEvaluacion.jsp").forward(request, response);
+//            request.setAttribute("error", error);
+//            getServletContext().getRequestDispatcher("/admin/insertarEvaluacion.jsp").forward(request, response);
+            mensaje = URLEncoder.encode("Error en la nota o observacion ", "latin1");
+            response.sendRedirect(response.encodeRedirectURL("insertarEvaluacion.jsp?mensaje=" + mensaje));
+
+            return;
         }
 
     }

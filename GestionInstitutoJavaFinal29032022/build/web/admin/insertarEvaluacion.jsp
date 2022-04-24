@@ -70,7 +70,7 @@
                                 <form class="requires-validation" novalidate action="InsertarEvaluacion" method="post">
                                     <div class="col-md-12">
                                         <select class="form-select mt-3" required name="dni_alumno">
-                                            <option selected disabled value="">Seleccionar Profesor</option>
+                                            <option selected disabled value="">Seleccionar Alumno</option>
                                             <%
                                                 EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionInstitutoJavaFinalPU");
                                                 HttpSession sesion = request.getSession();
@@ -95,7 +95,7 @@
                                     </div>
 
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="nota" placeholder="Nota Alumno" value="${nota}" required>
+                                        <input class="form-control" type="text" name="nota" placeholder="Nota Alumno (solo numeros entre 0 y 10)" value="${nota}" required>
                                         <div class="valid-feedback">Nota Alumno field is valid!</div>
                                         <div class="invalid-feedback">Nota Alumno field cannot be blank!</div>
                                     </div>

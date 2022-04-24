@@ -8,6 +8,7 @@ package controlador;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -67,6 +68,43 @@ public class UsarBaseDatos {
         }
 
         return u;
+    }
+    
+        public String buscarEmail(String email) {
+        Usuario u = null;
+        
+        String sql = "select email from usuarios where email = ? ";
+
+        try {
+            PreparedStatement ps = this.con.prepareStatement(sql);
+            ps.setString(1, email);
+           
+
+            ResultSet rs = ps.executeQuery();
+            
+            //si usuario existe
+            if (rs.next()) {
+                u = new Usuario();
+                u.setEmail(rs.getString("email"));
+               
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return u.getEmail();
+    }
+        
+        public static void main(String[] args) throws SQLException {
+            Connection con = Conexion.conectarBD();
+            
+        UsarBaseDatos us = new UsarBaseDatos(con);
+        
+       String a = us.buscarEmail("msebti2@gmail.com");
+        
+            System.out.println(a);
+        
     }
 
 }
