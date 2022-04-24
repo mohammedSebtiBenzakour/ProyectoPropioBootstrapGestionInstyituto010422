@@ -4,12 +4,68 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	<title>Gestión de un Instítuto</title>
 </head>
-<body>
-
-	<div class="container">
-		<h1>Formulario para insertar</h1>
+<body >
+ 
+	<div class="container"  >
+		<nav class="navbar navbar-expand-lg navbar-light  bg-light mt-3">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Menu</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+						<ul class="navbar-nav">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Juegos Educativos
+								</a>
+								<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+									<li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+									<li><a class="dropdown-item" href="http://localhost:8080/ElAhorcadoJavaServlet/index.jsp">El ahorcado</a></li>
+									<li><a class="dropdown-item" href="http://localhost:8080/p2/index.jsp">Juego de las parejas</a></li>
+									<li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen2/">Multiplicación de matrices</a></li>
+									<li><a class="dropdown-item" href="http://localhost:8080/SopaDeLetras/index.jsp">La sopa de letras</a></li>
+									<li><a class="dropdown-item" href="http://localhost:8080/EvaluacionExamen1/">Mostrar temperatura</a></li>
+									<li><a class="dropdown-item" href="../calculadora/calculadora.html">Calculadora</a></li>
+									<li><a class="dropdown-item" href="../MohammedSebtiBenzakour_sopaLetrasDireccion/sopaLetrasDireccion/sopaLetrasDireccion.html">Sopa de letra aleatoria Entorno cliente</a></li>
+									<li><a class="dropdown-item" href="../MohammedSebtiBenzakour_sopaLetrasDireccionIntroducidaManual/sopaLetrasDireccionIntroducidaManual/sopaLetrasDireccionIntroducidaManual.html">Sopa de letra manual Entorno cliente</a></li>
+								</ul>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Varios
+								</a>
+								<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+									<li><a class="dropdown-item" href="../Encuesta/encuesta.php">Encuesta</a></li>
+									<li><a class="dropdown-item" href="../examenDiseño261221_ConSASS/mohammedSass.html">Examen Diseño con SASS/SCSS</a></li>
+									<li><a class="dropdown-item" href="#">Juego de las parejas</a></li>
+									<li><a class="dropdown-item" href="#">Multiplicación de matrices</a></li>
+									<li><a class="dropdown-item" href="#">La sopa de letras</a></li>
+									<li><a class="dropdown-item" href="#">Mostrar temperatura</a></li>
+									<li><a class="dropdown-item" href="#">Calculadora</a></li>
+									<li><a class="dropdown-item" href="#">TrabajoTema7EntotnoCliente</a></li>
+									<li><a class="dropdown-item" href="#">TrabajoPractica2PHP</a></li>
+									<li><a class="dropdown-item" href="#">TrabajoBootstrapDiseño</a></li>
+									<li><a class="dropdown-item" href="#">TrabajoEntornoServidorPlantaEnergetica</a></li>
+									<li><a class="dropdown-item" href="#">TrabajoTema6FormularioEntotnoCliente</a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="calendario.html">Calendario</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col pt-2">
+						<form class="d-flex ps-3 justify-content-end" method="post" action="salir.php">
+							<button class="btn btn-outline-success" type="submit">Cerrar session</button>
+						</form>
+					</div>
+				</div>
+			</nav>
+		<h1>Formulario para insertar ( no se utiliza)</h1>
 
 		<form id="contact-form" method="post" action="guardar.php" role="form">
 
@@ -63,18 +119,17 @@
 							<div class="help-block with-errors"></div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<input type="submit" class="btn btn-success btn-send" value="Send message">
+					<div class="col-md-6 mt-3">
+						<input type="submit" class="btn btn-success btn-send" value="Insertar">
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 mt-3">
 						<button type="button" class="btn btn-info btn-send" value="Consultar Datos"><a href="consultar.php">Consultar Datos</a></button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<p class="text-muted">
-							<strong>*</strong> These fields are required. Contact form template by
-							<a href="https://bootstrapious.com/p/how-to-build-a-working-bootstrap-contact-form" target="_blank">Bootstrapious</a>.</p>
+							<strong>*</strong> Campos obligatorios.</p>
 						</div>
 					</div>
 				</div>
