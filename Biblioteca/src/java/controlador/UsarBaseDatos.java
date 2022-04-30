@@ -69,6 +69,60 @@ public class UsarBaseDatos {
 
         return u;
     }
+        public Usuario login_registrar_usuarios(String email, String clave) {
+        Usuario u = null;
+
+        String sql = "select * from registrar_usuarios where email = ? and clave = ?";
+
+        try {
+            PreparedStatement ps = this.con.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, clave);
+
+            ResultSet rs = ps.executeQuery();
+            
+            //si usuario existe
+            if (rs.next()) {
+                u = new Usuario();
+                u.setId(rs.getInt("dni"));
+                u.setNombre(rs.getString("nombre"));
+                u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("clave"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
+         public Usuario login_registrar_usuarios_con_usuario(String usuario, String clave) {
+        Usuario u = null;
+
+        String sql = "select * from registrar_usuarios where usuario = ? and clave = ?";
+
+        try {
+            PreparedStatement ps = this.con.prepareStatement(sql);
+            ps.setString(1, usuario);
+            ps.setString(2, clave);
+
+            ResultSet rs = ps.executeQuery();
+            
+            //si usuario existe
+            if (rs.next()) {
+                u = new Usuario();
+                u.setId(rs.getInt("dni"));
+                u.setNombre(rs.getString("nombre"));
+                u.setEmail(rs.getString("email"));
+                u.setPassword(rs.getString("clave"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
     
         public String buscarEmail(String email) {
         Usuario u = null;

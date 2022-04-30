@@ -6,6 +6,13 @@
 
 
 
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="md5.UsarMd5"%>
+<%@page import="controlador.Usuario"%>
+<%@page import="controlador.UsarBaseDatos"%>
+<%@page import="controlador.Conexion"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="org.apache.commons.codec.digest.DigestUtils"%>
 <%@page contentType="text/html" pageEncoding="latin1"%>
 <!DOCTYPE html>
 <html>
@@ -84,15 +91,36 @@
                 </ol>
             </nav>
         </div>
+        <%
+            String usu = request.getParameter("usu");
+            String pas = request.getParameter("pas");
+            
+            Connection con = Conexion.conectarBD();
+            String elEmail = null;
+            String laClave = null;
+            UsarBaseDatos ubd = new UsarBaseDatos(con);
+
+            //   Usuario u = ubd.login(email, password);
+            try {
+                Usuario u = ubd.login_registrar_usuarios_con_usuario(usu, pas);
+
+                elEmail = u.getEmail();
+                laClave = u.getPassword();
+
+            } catch (Exception e) {
+            }
+
+
+        %>
         <div class="container">
             <div class="regbox box">
                 <img class="avatar" src="img/user-avatar.png">
                 <h1>Registrarse</h1>
                 <form action="ServletLogin" method="post">
                     <p>Email usuario</p>
-                    <input type="text" placeholder="email" name="email" required autocomplete="off" value="s">
+                    <input type="text" placeholder="email" name="email" required autocomplete="off" value="<%= elEmail%>">
                     <p> Password</p>
-                    <input type="password" placeholder="Password" name="password" required autocomplete="off" value="s">
+                    <input type="password" placeholder="Password" name="password" required autocomplete="off" value="<%= laClave%>">
                     <input type="submit" value="Login">
                     <div class="span"><a href="olvidasteContrasenia.jsp">Olvidaste la contraseña?</a></div>
                     <div class="span"><a  href="registrarse.jsp">Registrarse aquí</a></div>

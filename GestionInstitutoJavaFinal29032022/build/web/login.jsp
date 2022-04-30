@@ -4,6 +4,13 @@
     Author     : daw2
 --%>
 
+<%@page import="javax.persistence.NoResultException"%>
+<%@page import="javax.persistence.EntityManager"%>
+<%@page import="javax.persistence.Query"%>
+<%@page import="dao.Registrar_usuariosJpaController"%>
+<%@page import="entidades.Registrar_usuarios"%>
+<%@page import="javax.persistence.Persistence"%>
+<%@page import="javax.persistence.EntityManagerFactory"%>
 <%@page contentType="text/html" pageEncoding="latin1"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -41,18 +48,41 @@
                         <div class="form-content">
                             <div class="form-items">
 
-                                <h3>  Iniciar Session</h3>
+                                <%
+                                    String usu = request.getParameter("usu");
+                                    String pas = request.getParameter("pas");
+                                    EntityManagerFactory emf = Persistence.createEntityManagerFactory("GestionInstitutoJavaFinalPU");
+                                    // Registrar_usuarios ru = null;
+                                    Registrar_usuariosJpaController rujc = new Registrar_usuariosJpaController(emf);
+                                    EntityManager em = emf.createEntityManager();
+                                    String dni_usu = null;
+                                    String clave_usu = null;
+                                    Query consultaM = em.createQuery("Select re_us From Registrar_usuarios re_us where re_us.usuario = :usuario", Registrar_usuarios.class);
+                                    consultaM.setParameter("usuario", usu);
+                                    Registrar_usuarios usus = null;
+                                    try {
+                                        usus = (Registrar_usuarios) consultaM.getSingleResult();
+                                        dni_usu = usus.getDni();
+                                        clave_usu = usus.getClave();
+                                    } catch (NoResultException e) {
+                                        usus = null;
+                                    }
+
+                                    System.out.println("el usuario22222ddddd es : " + dni_usu);
+                                %>
+
+                                <h3>  Iniciar Session </h3>
                                 <p>Porfavor completar todos los campos.</p>
                                 <form class="requires-validation" novalidate method="post" action="Login">
 
                                     <div class="col-md-12">
-                                        <input class="form-control" type="text" name="dni" placeholder="DNI" value="1" required autocomplete="off">
+                                        <input class="form-control" type="text" name="dni" placeholder="DNI" value="<%= dni_usu%>" required autocomplete="off">
                                         <div class="valid-feedback">El Usuario es valido!</div>
                                         <div class="invalid-feedback">El Usuario no puede estar vacio!</div>
                                     </div>
 
                                     <div class="col-md-12">
-                                        <input class="form-control" type="password" name="clave" value="a" placeholder="Contraseña" required>
+                                        <input class="form-control" type="password" name="clave" value="<%= clave_usu%>" placeholder="Contraseña" required>
                                         <div class="valid-feedback">Password field is valid!</div>
                                         <div class="invalid-feedback">Password field cannot be blank!</div>
                                     </div>

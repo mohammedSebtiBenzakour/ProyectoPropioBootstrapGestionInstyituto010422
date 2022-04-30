@@ -14,6 +14,23 @@ public class Usuario {
     private String nombre;
     private String email;
     private String password;
+    private String usuario;
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public Usuario(int id, String nombre, String email, String password, String usuario) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.password = password;
+        this.usuario = usuario;
+    }
 
     public Usuario() {
     }

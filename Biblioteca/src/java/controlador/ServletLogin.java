@@ -50,7 +50,9 @@ public class ServletLogin extends HttpServlet {
 
             UsarBaseDatos ubd = new UsarBaseDatos(con);
 
-            Usuario u = ubd.login(email, password);
+         //   Usuario u = ubd.login(email, password);
+            
+            Usuario u = ubd.login_registrar_usuarios(email, password);
 
             if (u != null) {
                 sesion.setAttribute("u", u);

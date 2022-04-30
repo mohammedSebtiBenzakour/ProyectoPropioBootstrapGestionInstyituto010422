@@ -22,6 +22,8 @@
 		$error = $_SESSION['error'] ;
 
 	}
+
+	
 	?>
 	<?php 
 
@@ -122,7 +124,7 @@
 					</div>
 					<div class="col-md-12">
 						<label for="validationCustom02" class="form-label">Contraseña</label>
-						<input type="password" name="clave" value="a" class="form-control estudiantes" id="validationCustom02" value="" required>
+						<input type="password" name="clave" value="a" class="form-control estudiantes" id="validationCustom02" required>
 						<div class="valid-feedback">
 							Looks good!
 						</div>

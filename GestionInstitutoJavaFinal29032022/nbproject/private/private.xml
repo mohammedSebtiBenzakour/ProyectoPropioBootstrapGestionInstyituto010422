@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/index.html</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/admin/insertarEvaluacion.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/src/java/central/LeerEmail.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/inicio.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/src/java/central/Central.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/src/java/controlador/InsertarMateria.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/src/java/central/ClaseParaValidarDatos.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/admin/mostrarAlumnos.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/src/java/controlador/LeerElEmail.java</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/login.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/admin/insertarMateria.jsp</file>
-            <file>file:/C:/wamp64/www/ProyectoPropioBootstrapGestionInstyituto010422/GestionInstitutoJavaFinal29032022/web/admin/leerEmail.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

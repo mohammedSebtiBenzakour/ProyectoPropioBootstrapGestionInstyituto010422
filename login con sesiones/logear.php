@@ -5,10 +5,18 @@ require_once("conexion.php");
 session_start();
 
 $perfil = $_POST['perfil'];
-$usuario = $_POST['usuario'];
+
 $clave = $_POST['clave'];
 
+if (!isset($_POST['usuario'])) {
+	$usuario = "";
+} else {
+	$usuario = $_POST['usuario'];
+}
 
+
+	// echo $_POST['usuario'] . "<br>";
+	// echo $_POST['clave'] . "<br>" ;
 
 // $consulta = "select usuario, count(*) as contar from registrar_usuarios where usuario = '$usuario' and clave = '$clave'";
 
@@ -35,8 +43,10 @@ if ($array['contar'] > 0) {
 
 	if ($perfil == $array['perfil'] && $usuario == $array['usuario'] && $clave = $array['clave'] && ($perfil == 'administrador' || $perfil == 'jefatura' || $perfil == 'profesor') ) {
 		//	echo "correcto";
-		$_SESSION['usuario'] = $usuario;
+		$_SESSION['usuario'] = $array['usuario'];
 		$_SESSION['perfil'] = $perfil;
+		$_SESSION['clave'] = $array['clave'];
+
 		// header("location: paginaPrincipal.php");
 		header("location: paginaMenuAside.php");
 	}	else{

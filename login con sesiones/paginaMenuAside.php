@@ -4,6 +4,20 @@ session_start();
 
 $usuario = $_SESSION['usuario'] ;
 $perfil = $_SESSION['perfil'] ;
+$clave = $_SESSION['clave'];
+
+//echo $clave . "<br>";
+//echo $usuario . "<br>";
+
+ // $clave = md5($_SESSION['clave']);
+ // $usuario = md5($_SESSION['usuario']);
+
+// $_SESSION['clave'] = md5($_SESSION['clave']);
+// $_SESSION['usuario'] = md5($_SESSION['usuario']);
+
+echo $_SESSION['usuario']. "<br>";
+echo $_SESSION['clave'] ;
+
 if (!isset($usuario) || !isset($perfil)) {
 	header("location: loginProfesores.php");
 }else{
@@ -383,8 +397,12 @@ $arrayP = mysqli_fetch_array($queryP);
 							</div>
 
 						</div>
-						<div class="tab-pane fade btn btn-warning w-50 m-4" id="v-pills-biblioteca" role="tabpanel" aria-labelledby="v-pills-settings-tab"><a class="dropdown-item " target="_blank" href="http://localhost:8080/LoginUsuario/index.jsp">Ir a la Biblioteca</a></div>
-						<div class="tab-pane fade btn btn-warning w-50 m-4" id="v-pills-jefatura" role="tabpanel" aria-labelledby="v-pills-settings-tab"><a class="dropdown-item" target="_blank" href="http://localhost:8080/GestionInstitutoJavaFinal/login.jsp">Ir a Gestionar Notas Alumnos</a></div>
+						<?php 
+
+
+						?>
+						<div class="tab-pane fade btn btn-warning w-50 m-4" id="v-pills-biblioteca" role="tabpanel" aria-labelledby="v-pills-settings-tab"><a class="dropdown-item " target="_blank" href="http://localhost:8080/LoginUsuario/index.jsp?usu=<?php echo $_SESSION['usuario']; ?>&pas=<?php echo $_SESSION['clave']; ?>">Ir a la Biblioteca</a></div>
+						<div class="tab-pane fade btn btn-warning w-50 m-4" id="v-pills-jefatura" role="tabpanel" aria-labelledby="v-pills-settings-tab"><a class="dropdown-item" target="_blank" href="http://localhost:8080/GestionInstitutoJavaFinal/login.jsp?usu=<?php echo $_SESSION['usuario']; ?>&pas=<?php echo $_SESSION['clave']; ?>">Ir a Gestionar Notas Alumnos</a></div>
 						<div class="tab-pane fade" id="v-pills-otros" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 
 							<header class="hero">

@@ -128,6 +128,8 @@ public class Registrar_usuariosJpaController implements Serializable {
             em.close();
         }
     }
+    
+   
 
     public int getRegistrar_usuariosCount() {
         EntityManager em = getEntityManager();
