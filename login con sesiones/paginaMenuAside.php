@@ -15,8 +15,8 @@ $clave = $_SESSION['clave'];
 // $_SESSION['clave'] = md5($_SESSION['clave']);
 // $_SESSION['usuario'] = md5($_SESSION['usuario']);
 
-echo $_SESSION['usuario']. "<br>";
-echo $_SESSION['clave'] ;
+// echo $_SESSION['usuario']. "<br>";
+// echo $_SESSION['clave'] ;
 
 if (!isset($usuario) || !isset($perfil)) {
 	header("location: loginProfesores.php");

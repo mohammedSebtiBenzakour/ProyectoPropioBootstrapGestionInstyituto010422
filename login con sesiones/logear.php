@@ -34,7 +34,7 @@ $queryP = mysqli_query($connection , $consultaP);
 $arrayP = mysqli_fetch_array($queryP);
 
 
-echo $array['contar'] . " - " . $array['usuario'] . " - " . $array["perfil"];
+// echo $array['contar'] . " - " . $array['usuario'] . " - " . $array["perfil"];
 
 if ($array['contar'] > 0) {
 
